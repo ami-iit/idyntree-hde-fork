@@ -201,7 +201,8 @@ bool BerdyHelper::init(const Model& model,
             break;
 
         case BERDY_FLOATING_BASE:
-        case HIERARCHICAL_BERDY_FLOATING_BASE:
+        case HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK:
+        case HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK:
             res = initBerdyFloatingBase();
             cacheDynamicVariablesOrderingFloatingBase();
             break;
@@ -253,10 +254,6 @@ bool BerdyHelper::initSensorsMeasurements()
         m_nrOfSensorsMeasurements += this->m_model.getNrOfDOFs();
     }
 
-    // Initialize task1 number of measurements variable
-    m_task1_nrOfSensorsMeasurements = 0;
-    task1BerdySensorTypeOffsets.netExtWrenchOffset = m_task1_nrOfSensorsMeasurements;
-
     berdySensorTypeOffsets.netExtWrenchOffset = m_nrOfSensorsMeasurements;
     if( m_options.includeAllNetExternalWrenchesAsSensors )
     {
@@ -265,9 +262,6 @@ bool BerdyHelper::initSensorsMeasurements()
             && !m_options.includeFixedBaseExternalWrench)
             numOfExternalWrenches = this->m_model.getNrOfLinks() - 1;
         m_nrOfSensorsMeasurements += 6 * numOfExternalWrenches;
-
-        // TODO: Double check if this can be handled better
-        m_task1_nrOfSensorsMeasurements += 6*numOfExternalWrenches;
     }
 
     berdySensorTypeOffsets.jointWrenchOffset = m_nrOfSensorsMeasurements;
@@ -294,13 +288,9 @@ bool BerdyHelper::initSensorsMeasurements()
     }
 
     // Add Rate of Change of Momentum (ROCM) sensor
-    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE && m_options.includeROCMAsSensorInTask1)
-    {
-        task1BerdySensorTypeOffsets.rocmOffset = m_task1_nrOfSensorsMeasurements;
-        m_task1_nrOfSensorsMeasurements += 6;
-    }
-
-    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE && m_options.includeROCMAsSensorInTask2)
+    bool variantIsHierarchical = (m_options.berdyVariant==HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK || 
+                                  m_options.berdyVariant==HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK);
+    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK && m_options.includeROCMAsSensor)
     {
         berdySensorTypeOffsets.rocmOffset = m_nrOfSensorsMeasurements;
         m_nrOfSensorsMeasurements += 6;
@@ -426,7 +416,7 @@ IndexRange BerdyHelper::getRangeOriginalBerdyFixedBase(BerdyDynamicVariablesType
     return ret;
 }
 
-IndexRange BerdyHelper::getRangeLinkVariable(BerdyDynamicVariablesTypes dynamicVariableType, LinkIndex idx, const HierarchialBerdyTask task) const
+IndexRange BerdyHelper::getRangeLinkVariable(BerdyDynamicVariablesTypes dynamicVariableType, LinkIndex idx) const
 {
     if( !isLinkBerdyDynamicVariable(dynamicVariableType) )
     {
@@ -441,7 +431,8 @@ IndexRange BerdyHelper::getRangeLinkVariable(BerdyDynamicVariablesTypes dynamicV
     else
     {
         IndexRange ret;
-        assert(m_options.berdyVariant == BERDY_FLOATING_BASE || m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
+        assert(m_options.berdyVariant == BERDY_FLOATING_BASE ||
+               m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK);
         assert(m_options.includeAllNetExternalWrenchesAsDynamicVariables);
         // For BERDY_FLOATING_BASE, the only two link dynamic variable are the proper classical acceleration and the
         // external force-torque
@@ -452,12 +443,11 @@ IndexRange BerdyHelper::getRangeLinkVariable(BerdyDynamicVariablesTypes dynamicV
                 ret.size = 6;
                 break;
             case NET_EXT_WRENCH:
-                if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-                    assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
+                //TODO check
+                if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK) {
                     ret.offset = 6*idx;
                 }
                 else {
-                    assert(m_options.berdyVariant == BERDY_FLOATING_BASE);
                     ret.offset = 12*idx + 6;
                 }
                 ret.size = 6;
@@ -645,7 +635,7 @@ IndexRange BerdyHelper::getRangeJointSensorVariable(const BerdySensorTypes senso
     return ret;
 }
 
-IndexRange BerdyHelper::getRangeLinkSensorVariable(const BerdySensorTypes sensorType, const LinkIndex idx, const HierarchialBerdyTask task) const
+IndexRange BerdyHelper::getRangeLinkSensorVariable(const BerdySensorTypes sensorType, const LinkIndex idx) const
 {
     IndexRange ret = IndexRange::InvalidRange();
 
@@ -668,14 +658,7 @@ IndexRange BerdyHelper::getRangeLinkSensorVariable(const BerdySensorTypes sensor
         }
         else
         {
-            if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-                assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-                ret.offset = task1BerdySensorTypeOffsets.netExtWrenchOffset + 6*idx;
-            }
-            else {
-                assert(m_options.berdyVariant == BERDY_FLOATING_BASE);
-                ret.offset = berdySensorTypeOffsets.netExtWrenchOffset + 6*idx;
-            }
+            ret.offset = berdySensorTypeOffsets.netExtWrenchOffset + 6*idx;
         }
     }
 
@@ -684,7 +667,7 @@ IndexRange BerdyHelper::getRangeLinkSensorVariable(const BerdySensorTypes sensor
 }
 
 
-IndexRange BerdyHelper::getRangeROCMSensorVariable(const BerdySensorTypes sensorType, const HierarchialBerdyTask task) const
+IndexRange BerdyHelper::getRangeROCMSensorVariable(const BerdySensorTypes sensorType) const
 {
     IndexRange ret = IndexRange::InvalidRange();
 
@@ -693,20 +676,14 @@ IndexRange BerdyHelper::getRangeROCMSensorVariable(const BerdySensorTypes sensor
         iDynTree::reportWarning("BerdyHelpers","getRangeROCMSensorVariable","Wrong sensor types passed for retrieving sensor range");
     }
 
-    if (m_options.berdyVariant != HIERARCHICAL_BERDY_FLOATING_BASE)
+    if (m_options.berdyVariant!=HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK && m_options.berdyVariant!=HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK)
     {
-        iDynTree::reportWarning("BerdyHelpers","getRangeROCMSensorVariable","Rate of Change of Momentum (ROCM) sensor is only available in HIERARCHICAL_BERDY_FLOATING_BASE");
+        iDynTree::reportWarning("BerdyHelpers","getRangeROCMSensorVariable","Rate of Change of Momentum (ROCM) sensor is only available in HIERARCHICAL_BERDY_FLOATING_BASE_X_TASK");
     }
 
     // Set sensor size and offset
     ret.size = 6;
-
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        ret.offset = task1BerdySensorTypeOffsets.rocmOffset;
-    }
-    else if (task == HierarchialBerdyTask::FULL_DYNAMICS) {
-        ret.offset = berdySensorTypeOffsets.rocmOffset;
-    }
+    ret.offset = berdySensorTypeOffsets.rocmOffset;
 
     assert(ret.isValid());
     return ret;
@@ -1035,7 +1012,7 @@ Matrix6x1 BerdyHelper::getBiasTermJointAccelerationPropagation(IJointConstPtr jo
 
 // TODO: This is repetitive from computeBerdyDynamicsMatricesFloatingBase,
 // Need to clean up into sub routines for modularity and avoiding code duplication
-bool BerdyHelper::computeTask1BerdyDynamicsMatricesFloatingBase(SparseMatrix<iDynTree::ColumnMajor>& task1_D, VectorDynSize& task1_bD, const HierarchialBerdyTask task)
+/**TODO bool BerdyHelper::computeTask1BerdyDynamicsMatricesFloatingBase(SparseMatrix<iDynTree::ColumnMajor>& task1_D, VectorDynSize& task1_bD, const HierarchialBerdyTask task)
 {
     task1_D.resize(m_task1_nrOfDynamicEquations, m_task1_nrOfDynamicalVariables);
     task1_bD.resize(m_task1_nrOfDynamicEquations);
@@ -1064,7 +1041,7 @@ bool BerdyHelper::computeTask1BerdyDynamicsMatricesFloatingBase(SparseMatrix<iDy
 
     task1_D.setFromTriplets(task1_matrixDElements);
     return true;
-}
+}**/
 
 bool BerdyHelper::computeBerdyDynamicsMatricesFloatingBase(SparseMatrix<iDynTree::ColumnMajor>& D, VectorDynSize& bD)
 {
@@ -1170,9 +1147,9 @@ bool BerdyHelper::computeBerdyDynamicsMatricesFloatingBase(SparseMatrix<iDynTree
     return true;
 }
 
-// TODO: This is repetitive from computeBerdySensorMatrices,
+// TODO[YESHI]: This is repetitive from computeBerdySensorMatrices,
 // Need to clean up into sub routines for modularity and avoiding code duplication
-bool BerdyHelper::computeTask1SensorMatrices(SparseMatrix<iDynTree::ColumnMajor>& task1_Y, VectorDynSize& task1_bY, const HierarchialBerdyTask task)
+/**TODO remove bool BerdyHelper::computeTask1SensorMatrices(SparseMatrix<iDynTree::ColumnMajor>& task1_Y, VectorDynSize& task1_bY, const HierarchialBerdyTask task)
 {
 
     task1_Y.resize(m_task1_nrOfSensorsMeasurements, m_task1_nrOfDynamicalVariables);
@@ -1246,7 +1223,7 @@ bool BerdyHelper::computeTask1SensorMatrices(SparseMatrix<iDynTree::ColumnMajor>
 
     task1_Y.setFromTriplets(task1_matrixYElements);
     return true;
-}
+}**/
 
 bool BerdyHelper::computeBerdySensorMatrices(SparseMatrix<iDynTree::ColumnMajor>& Y, VectorDynSize& bY)
 {
@@ -1550,10 +1527,10 @@ bool BerdyHelper::computeBerdySensorMatrices(SparseMatrix<iDynTree::ColumnMajor>
     ////////////////////////////////////////////////////////////////////////
     ///// Rate of Change of Momentum (ROCM) SENSOR
     ////////////////////////////////////////////////////////////////////////
-    if (m_options.includeROCMAsSensorInTask2)
+    if (m_options.includeROCMAsSensor)
     {
         // Get the row index corresponding to the rocm sensor
-        IndexRange rocmRange = this->getRangeROCMSensorVariable(ROCM_SENSOR, HierarchialBerdyTask::FULL_DYNAMICS);
+        IndexRange rocmRange = this->getRangeROCMSensorVariable(ROCM_SENSOR);
 
         for(size_t i = 0; i < m_options.rocmConstraintLinkNamesVector.size(); i++)
         {
@@ -1564,8 +1541,7 @@ bool BerdyHelper::computeBerdySensorMatrices(SparseMatrix<iDynTree::ColumnMajor>
             LinkIndex idx = m_model.getLinkIndex(linkName);
 
             // Get the column index corresponding to the net link external wrench sensor
-            IndexRange netExternalWrenchSensor = this->getRangeLinkSensorVariable(NET_EXT_WRENCH_SENSOR,
-                                                                                  idx, HierarchialBerdyTask::FULL_DYNAMICS);
+            IndexRange netExternalWrenchSensor = this->getRangeLinkSensorVariable(NET_EXT_WRENCH_SENSOR, idx);
 
             // TODO: Ensure that world_H_links is correctly updated after the forward kinematics
             Transform base_X_link = world_H_links(idx);
@@ -1592,22 +1568,28 @@ bool BerdyHelper::initBerdyFloatingBase()
 
     assert(m_options.includeAllNetExternalWrenchesAsDynamicVariables);
 
-    // In the floating berdy formulation, the amount of dynamic variables is 12*nrOfLinks + 6*nrOfJoints + nrOfDofs
-    m_nrOfDynamicalVariables = 12*m_model.getNrOfLinks() + 6*m_model.getNrOfJoints() + m_model.getNrOfDOFs();
-    // The dynamics equations considered by floating berdy are the acceleration propagation for each joint and the
-    // Newton-Euler equations for each link
-    m_nrOfDynamicEquations   = 6*m_model.getNrOfLinks() + 6*m_model.getNrOfJoints();
-
-    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE)
+    if(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK)
     {
-        // Task1 dynamic variabels include 6*nrOfLinks for the net external wrenches
-        m_task1_nrOfDynamicalVariables = 6*m_model.getNrOfLinks();
+        // Centroidal task dynamic variables include 6*nrOfLinks for the net external wrenches
+        m_nrOfDynamicalVariables = 6*m_model.getNrOfLinks();
 
-        // TODO: Double check this
-        m_task1_nrOfDynamicEquations = 6*m_model.getNrOfLinks();
+        //TODO[YESHI]: Double check this
+        m_nrOfDynamicEquations = 6*m_model.getNrOfLinks();
+    }
+    else
+    {
+        // In the floating berdy formulation, the amount of dynamic variables is 12*nrOfLinks + 6*nrOfJoints + nrOfDofs
+        m_nrOfDynamicalVariables = 12*m_model.getNrOfLinks() + 6*m_model.getNrOfJoints() + m_model.getNrOfDOFs();
+        // The dynamics equations considered by floating berdy are the acceleration propagation for each joint and the
+        // Newton-Euler equations for each link
+        m_nrOfDynamicEquations   = 6*m_model.getNrOfLinks() + 6*m_model.getNrOfJoints();
+    }
 
-        // check comConstraintLinkNamesVector is correctly set
-        if (m_options.includeROCMAsSensorInTask1 || m_options.includeROCMAsSensorInTask2) {
+    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK ||
+        m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK)
+    {
+        //TODO[YESHI] check comConstraintLinkNamesVector is correctly set
+        if (m_options.includeROCMAsSensor) {
             if (m_options.rocmConstraintLinkNamesVector.size() == 0)
             {
                 reportInfo("BerdyHelpers","initBerdyFloatingBase","rocmConstraintLinkNamesVector is not initialized using berdy helper options. Considering all the model links for centroidal dynamics constraint");
@@ -1652,57 +1634,29 @@ const Traversal& BerdyHelper::dynamicTraversal() const
 
 bool BerdyHelper::isValid() const { return m_areModelAndSensorsValid; }
 
-size_t BerdyHelper::getNrOfDynamicVariables(const HierarchialBerdyTask& task) const
+size_t BerdyHelper::getNrOfDynamicVariables() const
 {
-    // In case of centroidal dyanmics task, ensure the berdy variation is set as HIERARCHICAL_BERDY_FLOATING_BASE
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        return m_task1_nrOfDynamicalVariables;
-    }
-    else {
-        return m_nrOfDynamicalVariables;
-    }
+    return m_nrOfDynamicalVariables;
 }
 
-size_t BerdyHelper::getNrOfDynamicEquations(const HierarchialBerdyTask& task) const
+size_t BerdyHelper::getNrOfDynamicEquations() const
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        return m_task1_nrOfDynamicEquations;
-    }
-    else {
-        return m_nrOfDynamicEquations;
-    }
+    return m_nrOfDynamicEquations;
 }
 
-size_t BerdyHelper::getNrOfSensorsMeasurements(const HierarchialBerdyTask& task) const
+size_t BerdyHelper::getNrOfSensorsMeasurements() const
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        return m_task1_nrOfSensorsMeasurements;
-    }
-    else {
-        return m_nrOfSensorsMeasurements;
-    }
+    return m_nrOfSensorsMeasurements;
 }
 
 bool BerdyHelper::resizeAndZeroBerdyMatrices(SparseMatrix<iDynTree::ColumnMajor>& D, VectorDynSize& bD,
-                                             SparseMatrix<iDynTree::ColumnMajor>& Y, VectorDynSize& bY,
-                                             const HierarchialBerdyTask& task)
+                                             SparseMatrix<iDynTree::ColumnMajor>& Y, VectorDynSize& bY)
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        D.resize(getNrOfDynamicEquations(task),getNrOfDynamicVariables(task));
-        bD.resize(getNrOfDynamicEquations(task));
-        Y.resize(getNrOfSensorsMeasurements(task),getNrOfDynamicVariables(task));
-        bY.resize(getNrOfSensorsMeasurements(task));
-    }
-    else {
-        D.resize(getNrOfDynamicEquations(),getNrOfDynamicVariables());
-        bD.resize(getNrOfDynamicEquations());
-        Y.resize(getNrOfSensorsMeasurements(),getNrOfDynamicVariables());
-        bY.resize(getNrOfSensorsMeasurements());
-    }
+
+    D.resize(getNrOfDynamicEquations(),getNrOfDynamicVariables());
+    bD.resize(getNrOfDynamicEquations());
+    Y.resize(getNrOfSensorsMeasurements(),getNrOfDynamicVariables());
+    bY.resize(getNrOfSensorsMeasurements());
 
     D.zero();
     bD.zero();
@@ -1712,22 +1666,13 @@ bool BerdyHelper::resizeAndZeroBerdyMatrices(SparseMatrix<iDynTree::ColumnMajor>
 }
 
 bool BerdyHelper::resizeAndZeroBerdyMatrices(MatrixDynSize & D, VectorDynSize & bD,
-                                             MatrixDynSize & Y, VectorDynSize & bY,
-                                             const HierarchialBerdyTask& task)
+                                             MatrixDynSize & Y, VectorDynSize & bY)
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        D.resize(getNrOfDynamicEquations(task),getNrOfDynamicVariables(task));
-        bD.resize(getNrOfDynamicEquations(task));
-        Y.resize(getNrOfSensorsMeasurements(task),getNrOfDynamicVariables(task));
-        bY.resize(getNrOfSensorsMeasurements(task));
-    }
-    else {
-        D.resize(getNrOfDynamicEquations(),getNrOfDynamicVariables());
-        bD.resize(getNrOfDynamicEquations());
-        Y.resize(getNrOfSensorsMeasurements(),getNrOfDynamicVariables());
-        bY.resize(getNrOfSensorsMeasurements());
-    }
+    D.resize(getNrOfDynamicEquations(),getNrOfDynamicVariables());
+    bD.resize(getNrOfDynamicEquations());
+    Y.resize(getNrOfSensorsMeasurements(),getNrOfDynamicVariables());
+    bY.resize(getNrOfSensorsMeasurements());
+
     D.zero();
     bD.zero();
     Y.zero();
@@ -1819,8 +1764,7 @@ bool BerdyHelper::updateKinematicsFromFloatingBase(const JointPosDoubleArray& jo
 }
 
 bool BerdyHelper::getBerdyMatrices(SparseMatrix<iDynTree::ColumnMajor>& D, VectorDynSize& bD,
-                                   SparseMatrix<iDynTree::ColumnMajor>& Y, VectorDynSize& bY,
-                                   const HierarchialBerdyTask& task)
+                                   SparseMatrix<iDynTree::ColumnMajor>& Y, VectorDynSize& bY)
 {
     if (!m_kinematicsUpdated)
     {
@@ -1839,36 +1783,22 @@ bool BerdyHelper::getBerdyMatrices(SparseMatrix<iDynTree::ColumnMajor>& D, Vecto
     }
     else
     {
-        if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-            assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-            res = res && computeTask1BerdyDynamicsMatricesFloatingBase(D, bD, task);
-        }
-        else {
-            assert(m_options.berdyVariant == BERDY_FLOATING_BASE);
-            res = res && computeBerdyDynamicsMatricesFloatingBase(D, bD);
-        }
+        res = res && computeBerdyDynamicsMatricesFloatingBase(D, bD);
     }
 
     // Compute Y matrix of sensors
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        res = res && computeTask1SensorMatrices(Y, bY, task);
-    }
-    else {
-        res = res && computeBerdySensorMatrices(Y, bY);
-    }
+    res = res && computeBerdySensorMatrices(Y, bY);
 
     return res;
 }
 
 bool BerdyHelper::getBerdyMatrices(MatrixDynSize & D, VectorDynSize & bD,
-                                   MatrixDynSize & Y, VectorDynSize & bY,
-                                   const HierarchialBerdyTask& task)
+                                   MatrixDynSize & Y, VectorDynSize & bY)
 {
-    SparseMatrix<iDynTree::ColumnMajor> DSparse(getNrOfDynamicEquations(task),getNrOfDynamicVariables(task));
-    SparseMatrix<iDynTree::ColumnMajor> YSparse(getNrOfSensorsMeasurements(task),getNrOfDynamicVariables(task));
+    SparseMatrix<iDynTree::ColumnMajor> DSparse(getNrOfDynamicEquations(),getNrOfDynamicVariables());
+    SparseMatrix<iDynTree::ColumnMajor> YSparse(getNrOfSensorsMeasurements(),getNrOfDynamicVariables());
 
-    bool result = getBerdyMatrices(DSparse, bD, YSparse, bY, task);
+    bool result = getBerdyMatrices(DSparse, bD, YSparse, bY);
     if (!result) return false;
 
     for (SparseMatrix<iDynTree::ColumnMajor>::const_iterator it(DSparse.begin());
@@ -1885,13 +1815,10 @@ bool BerdyHelper::getBerdyMatrices(MatrixDynSize & D, VectorDynSize & bD,
 
 void BerdyHelper::cacheSensorsOrdering()
 {
-    //TODO: reserve space
+    //TODO[YESHI]: reserve space
     unsigned size = 0;
     m_sensorsOrdering.clear();
     m_sensorsOrdering.reserve(size);
-
-    m_task1SensorsOrdering.clear();
-    m_task1SensorsOrdering.reserve(size);
 
     //To be a bit more flexible, rely on getRangeSensorVariable to have the order of
     //the URDF sensors
@@ -1907,7 +1834,6 @@ void BerdyHelper::cacheSensorsOrdering()
         sensor.range = sensorRange;
         m_sensorsOrdering.push_back(sensor);
     }
-
 
     //For each URDF sensor, get the offset with the function
     //put everything in a sorted list (sort with the offset)
@@ -1957,15 +1883,6 @@ void BerdyHelper::cacheSensorsOrdering()
                 continue;
             }
 
-            // Task1 sensor ordering
-            IndexRange task1SensorRange = this->getRangeLinkSensorVariable(NET_EXT_WRENCH_SENSOR, idx, HierarchialBerdyTask::CENTROIDAL_DYNAMICS);
-            BerdySensor task1LinkSens;
-            task1LinkSens.type = NET_EXT_WRENCH_SENSOR;
-            task1LinkSens.id = m_model.getLinkName(idx);
-            task1LinkSens.range = task1SensorRange;
-
-            m_task1SensorsOrdering.push_back(task1LinkSens);
-
             IndexRange sensorRange = this->getRangeLinkSensorVariable(NET_EXT_WRENCH_SENSOR, idx);
             BerdySensor linkSens;
             linkSens.type = NET_EXT_WRENCH_SENSOR;
@@ -1987,21 +1904,11 @@ void BerdyHelper::cacheSensorsOrdering()
         m_sensorsOrdering.push_back(jointSens);
     }
 
-    if(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE && m_options.includeROCMAsSensorInTask1) {
+    bool isBerdyTaskVariant = m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK ||
+                              m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK;
+    if(isBerdyTaskVariant && m_options.includeROCMAsSensor) {
 
-        IndexRange task1SensorRange = this->getRangeROCMSensorVariable(ROCM_SENSOR, HierarchialBerdyTask::CENTROIDAL_DYNAMICS);
-
-        BerdySensor task1LinkSensor;
-        task1LinkSensor.type = ROCM_SENSOR;
-        task1LinkSensor.id = m_options.baseLink;
-        task1LinkSensor.range = task1SensorRange;
-
-        m_task1SensorsOrdering.push_back(task1LinkSensor);
-    }
-
-    if(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE && m_options.includeROCMAsSensorInTask2) {
-
-        IndexRange sensorRange = this->getRangeROCMSensorVariable(ROCM_SENSOR, HierarchialBerdyTask::FULL_DYNAMICS);
+        IndexRange sensorRange = this->getRangeROCMSensorVariable(ROCM_SENSOR);
 
         BerdySensor linkSensor;
         linkSensor.type = ROCM_SENSOR;
@@ -2009,11 +1916,6 @@ void BerdyHelper::cacheSensorsOrdering()
         linkSensor.range = sensorRange;
 
         m_sensorsOrdering.push_back(linkSensor);
-    }
-
-    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE)
-    {
-        std::sort(m_task1SensorsOrdering.begin(), m_task1SensorsOrdering.end());
     }
 
     //To avoid any problem, sort m_sensorsOrdering by range.offset
@@ -2102,9 +2004,6 @@ void BerdyHelper::cacheDynamicVariablesOrderingFloatingBase()
     unsigned size = 0;
     m_dynamicVariablesOrdering.reserve(size);
 
-    m_task1DynamicVariablesOrdering.clear();
-    m_task1DynamicVariablesOrdering.reserve(size);
-
     /*
          * Ordering:
          * The serialization we use is:
@@ -2130,13 +2029,6 @@ void BerdyHelper::cacheDynamicVariablesOrderingFloatingBase()
         m_dynamicVariablesOrdering.push_back(acceleration);
         m_dynamicVariablesOrdering.push_back(netExtWrench);
 
-        // Task1
-        BerdyDynamicVariable task1NetExternalWrench;
-        task1NetExternalWrench.type = NET_EXT_WRENCH;
-        task1NetExternalWrench.id = linkName;
-        task1NetExternalWrench.range = getRangeLinkVariable(task1NetExternalWrench.type, link, HierarchialBerdyTask::CENTROIDAL_DYNAMICS);
-
-        m_task1DynamicVariablesOrdering.push_back(task1NetExternalWrench);
     }
 
     for (JointIndex jntIdx = 0; jntIdx < static_cast<JointIndex>(m_model.getNrOfJoints()); ++jntIdx)
@@ -2171,29 +2063,16 @@ void BerdyHelper::cacheDynamicVariablesOrderingFloatingBase()
     //To avoid any problem, sort m_dynamicVariablesOrdering by range.offset
     std::sort(m_dynamicVariablesOrdering.begin(), m_dynamicVariablesOrdering.end());
 
-    std::sort(m_task1DynamicVariablesOrdering.begin(), m_task1DynamicVariablesOrdering.end());
 }
 
-const std::vector<BerdySensor>& BerdyHelper::getSensorsOrdering(const HierarchialBerdyTask& task) const
+const std::vector<BerdySensor>& BerdyHelper::getSensorsOrdering() const
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        return m_task1SensorsOrdering;
-    }
-    else {
-        return m_sensorsOrdering;
-    }
+    return m_sensorsOrdering;
 }
 
-const std::vector<BerdyDynamicVariable>& BerdyHelper::getDynamicVariablesOrdering(const HierarchialBerdyTask& task) const
+const std::vector<BerdyDynamicVariable>& BerdyHelper::getDynamicVariablesOrdering() const
 {
-    if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-        assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-        return m_task1DynamicVariablesOrdering;
-    }
-    else {
-        return m_dynamicVariablesOrdering;
-    }
+    return m_dynamicVariablesOrdering;
 }
 
 bool BerdyHelper::serializeDynamicVariables(LinkProperAccArray& properAccs,
@@ -2213,7 +2092,8 @@ bool BerdyHelper::serializeDynamicVariables(LinkProperAccArray& properAccs,
             break;
 
         case BERDY_FLOATING_BASE :
-        case HIERARCHICAL_BERDY_FLOATING_BASE:
+        case HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK:
+        case HIERARCHICAL_BERDY_FLOATING_BASE_FULL_DYNAMICS_TASK:
             res = serializeDynamicVariablesFloatingBase(properAccs, netTotalWrenchesWithoutGrav, netExtWrenches,
                                                         linkJointWrenches, jointTorques, jointAccs, d);
             break;
@@ -2379,8 +2259,7 @@ bool BerdyHelper::serializeSensorVariables(SensorsMeasurements& sensMeas,
                                            JointDOFsDoubleArray& jointAccs,
                                            LinkInternalWrenches& linkJointWrenches,
                                            VectorDynSize& y,
-                                           SpatialMomentum rocm,
-                                           HierarchialBerdyTask task)
+                                           SpatialMomentum rocm)
 {
     bool ret=true;
     assert(y.size() == this->getNrOfSensorsMeasurements());
@@ -2455,9 +2334,10 @@ bool BerdyHelper::serializeSensorVariables(SensorsMeasurements& sensMeas,
     ///// Rate of Change of Momentum (ROCM)
     ////////////////////////////////////////////////////////////////////////
     /// This method serializeSensorVariables is used in Testing for the Berdy estimator helper class
-    if (m_options.includeROCMAsSensorInTask1 && m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE)
+    //TODO also FULL_DYNAMICS task?
+    if (m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE_CENTROIDAL_TASK && m_options.includeROCMAsSensor)
     {
-        IndexRange sensorRange = this->getRangeROCMSensorVariable(ROCM_SENSOR, task);
+        IndexRange sensorRange = this->getRangeROCMSensorVariable(ROCM_SENSOR);
 
         setSubVector(y, sensorRange, static_cast<SpatialForceVector>(rocm));
     }
@@ -2498,20 +2378,14 @@ bool BerdyHelper::extractJointTorquesFromDynamicVariables(const VectorDynSize& d
 }
 
 bool BerdyHelper::extractLinkNetExternalWrenchesFromDynamicVariables(const VectorDynSize& d,
-                                                                     LinkNetExternalWrenches& netExtWrenches,
-                                                                     const HierarchialBerdyTask& task) const
+                                                                     LinkNetExternalWrenches& netExtWrenches) const
 {
     const Model& model = this->model();
     for (LinkIndex lnkIdx=0; lnkIdx < static_cast<LinkIndex>(model.getNrOfLinks()); lnkIdx++)
     {
         IndexRange range;
-        if (task == HierarchialBerdyTask::CENTROIDAL_DYNAMICS) {
-            assert(m_options.berdyVariant == HIERARCHICAL_BERDY_FLOATING_BASE);
-            range = this->getRangeLinkVariable(NET_EXT_WRENCH, lnkIdx, task);
-        }
-        else {
-            range = this->getRangeLinkVariable(NET_EXT_WRENCH, lnkIdx);
-        }
+        range = this->getRangeLinkVariable(NET_EXT_WRENCH, lnkIdx);
+            
         LinearForceVector3   force(d.data() + range.offset, 3);
         AngularMotionVector3 torque(d.data() + range.offset + 3, 3);
         netExtWrenches(lnkIdx) = Wrench(force, torque);
