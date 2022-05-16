@@ -7,40 +7,40 @@ classdef VisualizerOptions < iDynTreeSwigRef
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1909, self);
+        varargout{1} = iDynTreeMEX(1929, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1910, self, varargin{1});
+        iDynTreeMEX(1930, self, varargin{1});
       end
     end
     function varargout = winWidth(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1911, self);
+        varargout{1} = iDynTreeMEX(1931, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1912, self, varargin{1});
+        iDynTreeMEX(1932, self, varargin{1});
       end
     end
     function varargout = winHeight(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1913, self);
+        varargout{1} = iDynTreeMEX(1933, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1914, self, varargin{1});
+        iDynTreeMEX(1934, self, varargin{1});
       end
     end
     function varargout = rootFrameArrowsDimension(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1915, self);
+        varargout{1} = iDynTreeMEX(1935, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1916, self, varargin{1});
+        iDynTreeMEX(1936, self, varargin{1});
       end
     end
     function self = VisualizerOptions(varargin)
@@ -49,14 +49,14 @@ classdef VisualizerOptions < iDynTreeSwigRef
           self.swigPtr = varargin{1}.swigPtr;
         end
       else
-        tmp = iDynTreeMEX(1917, varargin{:});
+        tmp = iDynTreeMEX(1937, varargin{:});
         self.swigPtr = tmp.swigPtr;
         tmp.SwigClear();
       end
     end
     function delete(self)
       if self.swigPtr
-        iDynTreeMEX(1918, self);
+        iDynTreeMEX(1938, self);
         self.SwigClear();
       end
     end

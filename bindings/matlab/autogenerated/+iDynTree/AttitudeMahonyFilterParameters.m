@@ -7,50 +7,50 @@ classdef AttitudeMahonyFilterParameters < iDynTreeSwigRef
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1612, self);
+        varargout{1} = iDynTreeMEX(1627, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1613, self, varargin{1});
+        iDynTreeMEX(1628, self, varargin{1});
       end
     end
     function varargout = kp(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1614, self);
+        varargout{1} = iDynTreeMEX(1629, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1615, self, varargin{1});
+        iDynTreeMEX(1630, self, varargin{1});
       end
     end
     function varargout = ki(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1616, self);
+        varargout{1} = iDynTreeMEX(1631, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1617, self, varargin{1});
+        iDynTreeMEX(1632, self, varargin{1});
       end
     end
     function varargout = use_magnetometer_measurements(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1618, self);
+        varargout{1} = iDynTreeMEX(1633, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1619, self, varargin{1});
+        iDynTreeMEX(1634, self, varargin{1});
       end
     end
     function varargout = confidence_magnetometer_measurements(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1620, self);
+        varargout{1} = iDynTreeMEX(1635, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1621, self, varargin{1});
+        iDynTreeMEX(1636, self, varargin{1});
       end
     end
     function self = AttitudeMahonyFilterParameters(varargin)
@@ -59,14 +59,14 @@ classdef AttitudeMahonyFilterParameters < iDynTreeSwigRef
           self.swigPtr = varargin{1}.swigPtr;
         end
       else
-        tmp = iDynTreeMEX(1622, varargin{:});
+        tmp = iDynTreeMEX(1637, varargin{:});
         self.swigPtr = tmp.swigPtr;
         tmp.SwigClear();
       end
     end
     function delete(self)
       if self.swigPtr
-        iDynTreeMEX(1623, self);
+        iDynTreeMEX(1638, self);
         self.SwigClear();
       end
     end

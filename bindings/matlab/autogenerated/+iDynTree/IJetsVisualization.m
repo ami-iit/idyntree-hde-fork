@@ -5,30 +5,30 @@ classdef IJetsVisualization < iDynTreeSwigRef
     end
     function delete(self)
       if self.swigPtr
-        iDynTreeMEX(1851, self);
+        iDynTreeMEX(1866, self);
         self.SwigClear();
       end
     end
     function varargout = setJetsFrames(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1852, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1867, self, varargin{:});
     end
     function varargout = getNrOfJets(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1853, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1868, self, varargin{:});
     end
     function varargout = getJetDirection(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1854, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1869, self, varargin{:});
     end
     function varargout = setJetDirection(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1855, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1870, self, varargin{:});
     end
     function varargout = setJetColor(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1856, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1871, self, varargin{:});
     end
     function varargout = setJetsDimensions(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1857, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1872, self, varargin{:});
     end
     function varargout = setJetsIntensity(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1858, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1873, self, varargin{:});
     end
     function self = IJetsVisualization(varargin)
       if nargin==1 && strcmp(class(varargin{1}),'iDynTreeSwigRef')

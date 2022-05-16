@@ -7,30 +7,30 @@ classdef AttitudeEstimatorState < iDynTreeSwigRef
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1593, self);
+        varargout{1} = iDynTreeMEX(1608, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1594, self, varargin{1});
+        iDynTreeMEX(1609, self, varargin{1});
       end
     end
     function varargout = m_angular_velocity(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1595, self);
+        varargout{1} = iDynTreeMEX(1610, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1596, self, varargin{1});
+        iDynTreeMEX(1611, self, varargin{1});
       end
     end
     function varargout = m_gyroscope_bias(self, varargin)
       narginchk(1, 2)
       if nargin==1
         nargoutchk(0, 1)
-        varargout{1} = iDynTreeMEX(1597, self);
+        varargout{1} = iDynTreeMEX(1612, self);
       else
         nargoutchk(0, 0)
-        iDynTreeMEX(1598, self, varargin{1});
+        iDynTreeMEX(1613, self, varargin{1});
       end
     end
     function self = AttitudeEstimatorState(varargin)
@@ -39,14 +39,14 @@ classdef AttitudeEstimatorState < iDynTreeSwigRef
           self.swigPtr = varargin{1}.swigPtr;
         end
       else
-        tmp = iDynTreeMEX(1599, varargin{:});
+        tmp = iDynTreeMEX(1614, varargin{:});
         self.swigPtr = tmp.swigPtr;
         tmp.SwigClear();
       end
     end
     function delete(self)
       if self.swigPtr
-        iDynTreeMEX(1600, self);
+        iDynTreeMEX(1615, self);
         self.SwigClear();
       end
     end

@@ -9,37 +9,37 @@ classdef ModelCalibrationHelper < iDynTreeSwigRef
           self.swigPtr = varargin{1}.swigPtr;
         end
       else
-        tmp = iDynTreeMEX(1423, varargin{:});
+        tmp = iDynTreeMEX(1433, varargin{:});
         self.swigPtr = tmp.swigPtr;
         tmp.SwigClear();
       end
     end
     function delete(self)
       if self.swigPtr
-        iDynTreeMEX(1424, self);
+        iDynTreeMEX(1434, self);
         self.SwigClear();
       end
     end
     function varargout = loadModelFromString(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1425, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1435, self, varargin{:});
     end
     function varargout = loadModelFromFile(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1426, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1436, self, varargin{:});
     end
     function varargout = updateModelInertialParametersToString(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1427, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1437, self, varargin{:});
     end
     function varargout = updateModelInertialParametersToFile(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1428, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1438, self, varargin{:});
     end
     function varargout = model(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1429, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1439, self, varargin{:});
     end
     function varargout = sensors(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1430, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1440, self, varargin{:});
     end
     function varargout = isValid(self,varargin)
-      [varargout{1:nargout}] = iDynTreeMEX(1431, self, varargin{:});
+      [varargout{1:nargout}] = iDynTreeMEX(1441, self, varargin{:});
     end
   end
   methods(Static)
