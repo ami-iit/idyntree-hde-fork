@@ -59,7 +59,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespaceiDynTree.html">iDynTree</a>::<wbr/></span>SixAxisForceTorqueSensor <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="SixAxisForceTorqueSensor_8h.html">&lt;iDynTree/Sensors/SixAxisForceTorqueSensor.h&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="SixAxisForceTorqueSensor_8h.html">&lt;iDynTree/SixAxisForceTorqueSensor.h&gt;</a></div>
         </h1>
         <p>A six axis force torque sensor class implementation of the <a href="classiDynTree_1_1Sensor.html" class="m-doc">Sensor</a>.</p>
         <nav class="m-block m-default">
@@ -391,9 +391,9 @@
                 </tr>
               </tfoot>
             </table>
-<p>If the F/T sensors is not connected to link_index, the function will return false and the matrix will be zeroed.</p><aside class="m-note m-info"><h4>Note</h4><p>This will return and adjoint transformation matrix, possibly with the sign changed depending on the &quot;direction&quot; of the F/T sensor (i.e. if it is measures the wrench applied by a link to another, of viceversa).</p><p>The following condition should always hold :</p><pre class="m-code"><span class="n">getWrenchAppliedOnLink</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">measured_wrench</span><span class="p">,</span><span class="n">wrench_on_link</span><span class="p">);</span><span class="w"></span>
-<span class="n">getWrenchAppliedOnLinkMatrix</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">wrench_applied_on_link_matrix</span><span class="p">);</span><span class="w"></span>
-<span class="n">wrench_applied_on_link_matrix</span><span class="o">*</span><span class="n">measured_wrench</span><span class="p">.</span><span class="n">toVector</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">wrench_on_link</span><span class="w"></span></pre></aside>
+<p>If the F/T sensors is not connected to link_index, the function will return false and the matrix will be zeroed.</p><aside class="m-note m-info"><h4>Note</h4><p>This will return and adjoint transformation matrix, possibly with the sign changed depending on the &quot;direction&quot; of the F/T sensor (i.e. if it is measures the wrench applied by a link to another, of viceversa).</p><p>The following condition should always hold :</p><pre class="m-code"><span class="n">getWrenchAppliedOnLink</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">measured_wrench</span><span class="p">,</span><span class="n">wrench_on_link</span><span class="p">);</span>
+<span class="n">getWrenchAppliedOnLinkMatrix</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">wrench_applied_on_link_matrix</span><span class="p">);</span>
+<span class="n">wrench_applied_on_link_matrix</span><span class="o">*</span><span class="n">measured_wrench</span><span class="p">.</span><span class="n">toVector</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">wrench_on_link</span></pre></aside>
           </div></section>
           <section class="m-doc-details" id="a978eb446cf0f7b11baab9e866a253566"><div>
             <h3>
@@ -409,9 +409,9 @@
                 </tr>
               </tfoot>
             </table>
-<p>If the F/T sensors is not connected to link_index, the function will return false and the matrix will be zeroed.</p><aside class="m-note m-info"><h4>Note</h4><p>This will return an adjoint transformation matrix, possibly with the sign changed depending on the &quot;direction&quot; of the F/T sensor (i.e. if it is measures the wrench applied by a link to another, of viceversa).</p><p>The following condition should always hold :</p><pre class="m-code"><span class="n">getWrenchAppliedOnLink</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">measured_wrench</span><span class="p">,</span><span class="n">wrench_on_link</span><span class="p">);</span><span class="w"></span>
-<span class="n">getWrenchAppliedOnLinkInverseMatrix</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">wrench_applied_on_link_inverse_matrix</span><span class="p">);</span><span class="w"></span>
-<span class="n">measured_wrench</span><span class="p">.</span><span class="n">toVector</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">wrench_applied_on_link_inverse_matrix</span><span class="o">*</span><span class="n">wrench_on_link</span><span class="w"></span></pre></aside>
+<p>If the F/T sensors is not connected to link_index, the function will return false and the matrix will be zeroed.</p><aside class="m-note m-info"><h4>Note</h4><p>This will return an adjoint transformation matrix, possibly with the sign changed depending on the &quot;direction&quot; of the F/T sensor (i.e. if it is measures the wrench applied by a link to another, of viceversa).</p><p>The following condition should always hold :</p><pre class="m-code"><span class="n">getWrenchAppliedOnLink</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">measured_wrench</span><span class="p">,</span><span class="n">wrench_on_link</span><span class="p">);</span>
+<span class="n">getWrenchAppliedOnLinkInverseMatrix</span><span class="p">(</span><span class="n">link</span><span class="p">,</span><span class="n">wrench_applied_on_link_inverse_matrix</span><span class="p">);</span>
+<span class="n">measured_wrench</span><span class="p">.</span><span class="n">toVector</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">wrench_applied_on_link_inverse_matrix</span><span class="o">*</span><span class="n">wrench_on_link</span></pre></aside>
           </div></section>
           <section class="m-doc-details" id="aa8fc03efd89977d0e4ca7df9131c1dbc"><div>
             <h3>
@@ -473,7 +473,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>iDynTree documentation. Licensed under the <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">GNU Lesser General Public License v3.0</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
+        <p>iDynTree documentation. Licensed under the <a href="https://spdx.org/licenses/BSD-3-Clause.html">BSD-3-Clause</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
       </div>
     </div>
   </div>

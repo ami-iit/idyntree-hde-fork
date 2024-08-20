@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="68" column="17"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="61" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a9c251ac717cbcfeb75a39fffd5a9b185" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="83" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="76" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a7121acf85b46be0edb9231588c579013" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="95" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="88" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a6cc4ea7bacb721c67890ceb250857e71" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="105" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="98" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a3fd8541c4ede713177058251aae24717" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -151,7 +151,7 @@
           <declname>rot</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in rotation matrix form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="43">$ {^A}R_B $</formula> as the rotation matrix. </para>
+<para>Get orientation of the body with respect to inertial frame, in rotation matrix form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="83">$ {^A}R_B $</formula> as the rotation matrix. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="114" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="107" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a72f94711e28d7173869f41492d6ac364" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -183,7 +183,7 @@
           <declname>q</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in unit quaternion form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="44">$ {^A}q_B as the quaternion $</formula>. </para>
+<para>Get orientation of the body with respect to inertial frame, in unit quaternion form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="84">$ {^A}q_B as the quaternion $</formula>. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="note"><para>quaternion has the form (real, imaginary) and is normalized </para>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="129" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="122" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1add5b1c7109a232bcb3da976792f72a6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -219,10 +219,10 @@
           <declname>rpy</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in Euler&apos;s RPY form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us the RPY 3d vector of Euler Angles when composed together gives us <formula id="43">$ {^A}R_B $</formula> as the rotation matrix where <formula id="45">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll)$</formula>. </para>
+<para>Get orientation of the body with respect to inertial frame, in Euler&apos;s RPY form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us the RPY 3d vector of Euler Angles when composed together gives us <formula id="83">$ {^A}R_B $</formula> as the rotation matrix where <formula id="85">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll)$</formula>. </para>
         </briefdescription>
         <detaileddescription>
-<para>For more details about the range of the RPY Euler angles, please refer the documentation of <ulink url="https://github.com/robotology/idyntree/blob/c8bf721b771fa4b1e7c3a940632e121060719a19/src/core/include/iDynTree/Core/Rotation.h#L167">GetRPY()</ulink></para>
+<para>For more details about the range of the RPY Euler angles, please refer the documentation of <ulink url="https://github.com/robotology/idyntree/blob/c8bf721b771fa4b1e7c3a940632e121060719a19/src/core/include/iDynTree/Rotation.h#L167">GetRPY()</ulink></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">rpy</parametername>
@@ -238,7 +238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="142" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="135" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a7234eb151268d99d90dbe691a6bf3a46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>size_t</type>
@@ -257,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="148" column="24"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="141" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a0360685bed94e086224b1126116dca04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -271,10 +271,10 @@
           <declname>stateBuffer</declname>
         </param>
         <briefdescription>
-<para>Get internal state of the estimator The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
+<para>Get internal state of the estimator The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default internal state of the estimator would be <formula id="46">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
+<para>The default internal state of the estimator would be <formula id="86">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">stateBuffer</parametername>
 </parameternamelist>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="160" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="153" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a86554ddcfc70601b05ad7cd997851983" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -303,10 +303,10 @@
           <declname>stateBuffer</declname>
         </param>
         <briefdescription>
-<para>Get initial internal state of the estimator The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
+<para>Get initial internal state of the estimator The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default internal state of the estimator would be <formula id="46">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
+<para>The default internal state of the estimator would be <formula id="86">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">stateBuffer</parametername>
 </parameternamelist>
@@ -321,7 +321,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="172" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="165" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a4277465fc6cacfa0fa0ccd1d1c863954" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -338,7 +338,7 @@
 <para>set internal state of the estimator. </para>
         </briefdescription>
         <detaileddescription>
-<para>The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <parameterlist kind="param"><parameteritem>
+<para>The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">stateBuffer</parametername>
 </parameternamelist>
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="183" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="176" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1IAttitudeEstimator_1a8ca76def98fa0bd37975788dc7e1c0c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -370,7 +370,7 @@
 <para>set the initial orientation for the internal state of the estimator. </para>
         </briefdescription>
         <detaileddescription>
-<para>The initial orientation for the internal state of the estimator is described as <formula id="47">$ {^A}q_B $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <parameterlist kind="param"><parameteritem>
+<para>The initial orientation for the internal state of the estimator is described as <formula id="87">$ {^A}q_B $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">stateBuffer</parametername>
 </parameternamelist>
@@ -385,7 +385,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeEstimator.h" line="192" column="22"/>
+        <location file="iDynTree/AttitudeEstimator.h" line="185" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -404,7 +404,7 @@
 </listitem></itemizedlist>
 </para>
 <para>However, additional methods to set and get parameters for the filter might be available with respect to the filters.</para>
-<para>The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
+<para>The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -424,7 +424,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="iDynTree/Estimation/AttitudeEstimator.h" line="65" column="5" bodyfile="iDynTree/Estimation/AttitudeEstimator.h" bodystart="66" bodyend="193"/>
+    <location file="iDynTree/AttitudeEstimator.h" line="58" column="5" bodyfile="iDynTree/AttitudeEstimator.h" bodystart="59" bodyend="186"/>
     <listofallmembers>
       <member refid="classiDynTree_1_1IAttitudeEstimator_1a86554ddcfc70601b05ad7cd997851983" prot="public" virt="pure-virtual"><scope>iDynTree::IAttitudeEstimator</scope><name>getDefaultInternalInitialState</name></member>
       <member refid="classiDynTree_1_1IAttitudeEstimator_1a0360685bed94e086224b1126116dca04" prot="public" virt="pure-virtual"><scope>iDynTree::IAttitudeEstimator</scope><name>getInternalState</name></member>

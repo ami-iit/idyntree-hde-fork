@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="146" column="36" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="146" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="139" column="36" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="139" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1ab40c1b03d4acc60dcdf9dc9dcdb6c9d4" prot="protected" static="no" mutable="no">
         <type><ref refid="structiDynTree_1_1AttitudeEstimatorState" kindref="compound">AttitudeEstimatorState</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="147" column="28" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="147" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="140" column="28" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1a07413b093183b85df04fdbcfa241cec3" prot="protected" static="no" mutable="no">
         <type><ref refid="structiDynTree_1_1AttitudeEstimatorState" kindref="compound">AttitudeEstimatorState</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="147" column="43" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="147" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="140" column="43" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -52,13 +52,13 @@
         <argsstring></argsstring>
         <name>m_orientationInSO3</name>
         <briefdescription>
-<para>orientation estimate as rotation matrix <formula id="43">$ {^A}R_B $</formula> where <formula id="41">$ A $</formula> is inertial frame and <formula id="42">$ B $</formula> is the frame attached to the body </para>
+<para>orientation estimate as rotation matrix <formula id="83">$ {^A}R_B $</formula> where <formula id="81">$ A $</formula> is inertial frame and <formula id="82">$ B $</formula> is the frame attached to the body </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="149" column="24" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="149" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="142" column="24" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="142" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1aa62a1ed049997783346677eff023c2e0" prot="private" static="no" mutable="no">
         <type><ref refid="classiDynTree_1_1VectorFixSize" kindref="compound">iDynTree::RPY</ref></type>
@@ -66,13 +66,13 @@
         <argsstring></argsstring>
         <name>m_orientationInRPY</name>
         <briefdescription>
-<para>orientation estimate as a 3D vector in RPY representation, where <formula id="66">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll) $</formula> </para>
+<para>orientation estimate as a 3D vector in RPY representation, where <formula id="106">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll) $</formula> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="150" column="19" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="150" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="143" column="19" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1a31723a436e908f5e82d84e744c466d5f" prot="private" static="no" mutable="no">
         <type><ref refid="classiDynTree_1_1VectorFixSize" kindref="compound">iDynTree::Vector3</ref></type>
@@ -80,13 +80,13 @@
         <argsstring></argsstring>
         <name>m_omega_mes</name>
         <briefdescription>
-<para>vectorial estimate from accelerometer and magnetometer measurements, <formula id="67">$ \omega_{mes} \in \mathbb{R}^3 $</formula>, notation from the paper Non linear complementary filters on the special orthogonal group </para>
+<para>vectorial estimate from accelerometer and magnetometer measurements, <formula id="107">$ \omega_{mes} \in \mathbb{R}^3 $</formula>, notation from the paper Non linear complementary filters on the special orthogonal group </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="152" column="23" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="152" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="145" column="23" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="145" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1a06d92addd859463a0febf9d788f2a71c" prot="private" static="no" mutable="no">
         <type><ref refid="classiDynTree_1_1VectorFixSize" kindref="compound">iDynTree::GyroscopeMeasurements</ref></type>
@@ -94,13 +94,13 @@
         <argsstring></argsstring>
         <name>m_Omega_y</name>
         <briefdescription>
-<para>gyroscope measurement, <formula id="68">$ \Omega_{y} \in \mathbb{R}^3 $</formula>, notation from the paper Non linear complementary filters on the special orthogonal group </para>
+<para>gyroscope measurement, <formula id="108">$ \Omega_{y} \in \mathbb{R}^3 $</formula>, notation from the paper Non linear complementary filters on the special orthogonal group </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="153" column="37" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="153" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="146" column="37" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="146" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1aeade846e7de685520e5a56cd89f1064d" prot="private" static="no" mutable="no">
         <type><ref refid="classiDynTree_1_1Direction" kindref="compound">iDynTree::Direction</ref></type>
@@ -108,13 +108,13 @@
         <argsstring></argsstring>
         <name>m_gravity_direction</name>
         <briefdescription>
-<para>direction of the gravity vector expressed in the inertial frame denoted by <formula id="41">$ A $</formula>, default set to <formula id="69">$ e_3 = \begin{bmatrix} 0 &amp; 0 &amp; 1.0 \end{bmatrix}^T $</formula> </para>
+<para>direction of the gravity vector expressed in the inertial frame denoted by <formula id="81">$ A $</formula>, default set to <formula id="109">$ e_3 = \begin{bmatrix} 0 &amp; 0 &amp; 1.0 \end{bmatrix}^T $</formula> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="155" column="25" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="155" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="148" column="25" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1AttitudeMahonyFilter_1ad976d4c08caa4ff90add3cef3c9ff6e2" prot="private" static="no" mutable="no">
         <type><ref refid="classiDynTree_1_1Direction" kindref="compound">iDynTree::Direction</ref></type>
@@ -122,13 +122,13 @@
         <argsstring></argsstring>
         <name>m_earth_magnetic_field_direction</name>
         <briefdescription>
-<para>direction of absolute magnetic field expressed in the inertial frame denoted by <formula id="41">$ A $</formula>, default set to <formula id="70">$ {^A}m = \begin{bmatrix} 0 &amp; 0 &amp; 1.0 \end{bmatrix}^T $</formula> </para>
+<para>direction of absolute magnetic field expressed in the inertial frame denoted by <formula id="81">$ A $</formula>, default set to <formula id="110">$ {^A}m = \begin{bmatrix} 0 &amp; 0 &amp; 1.0 \end{bmatrix}^T $</formula> </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="156" column="25" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="156" bodyend="-1"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="149" column="25" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="149" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="74" column="5"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="67" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1af4722cd241bbe3990de91bd3a8f29138" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="80" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="73" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1ae0d9d819b5a9e7d2d4dc9ae95168c0d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +191,7 @@
 <parametername direction="in">confidence</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>can take values between <formula id="65">$ [0, 1] $</formula> </para>
+<para>can take values between <formula id="105">$ [0, 1] $</formula> </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="86" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="79" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a6ca15476d3c86749bce4a61230e5959d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="92" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="85" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a17b6e6f323a3fc741351a68e3225a662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -255,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="98" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="91" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1aae10fdac1916d45d912763443e246500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -283,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="104" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="97" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a2d04a24c139621ec0d036a18c721b02c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -311,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="110" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="103" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1aca94c3f5d2341a11d80c03914c9372a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -341,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="118" column="10" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="118" bodyend="122"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="111" column="10" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="111" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a1b7e9dc1d9d573bc739279c10487337a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -369,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="128" column="10" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="128" bodyend="128"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="121" column="10" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="121" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a761c1ce98405a7bf629e1e523e3649f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -414,7 +414,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="130" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="123" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1aa87977f5cb6afd23f73aa526dc993ade" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -469,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="132" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="125" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1af743b419ed9b87c50cc3d3bd87c09ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -487,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="135" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="128" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a17791aee32f963e4b1117625fb19a509" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -500,7 +500,7 @@
           <declname>rot</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in rotation matrix form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="43">$ {^A}R_B $</formula> as the rotation matrix. </para>
+<para>Get orientation of the body with respect to inertial frame, in rotation matrix form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="83">$ {^A}R_B $</formula> as the rotation matrix. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -518,7 +518,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="136" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="129" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a12b66b4f277bb7942e82eb970550878a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -531,7 +531,7 @@
           <declname>q</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in unit quaternion form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="44">$ {^A}q_B as the quaternion $</formula>. </para>
+<para>Get orientation of the body with respect to inertial frame, in unit quaternion form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us <formula id="84">$ {^A}q_B as the quaternion $</formula>. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="note"><para>quaternion has the form (real, imaginary) and is normalized </para>
@@ -553,7 +553,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="137" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="130" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1acae8174e86843da647341949ca29e17a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -566,10 +566,10 @@
           <declname>rpy</declname>
         </param>
         <briefdescription>
-<para>Get orientation of the body with respect to inertial frame, in Euler&apos;s RPY form If we denote <formula id="41">$ A $</formula> as inertial frame and <formula id="42">$ B $</formula> as the frame attached to the body, then this method gives us the RPY 3d vector of Euler Angles when composed together gives us <formula id="43">$ {^A}R_B $</formula> as the rotation matrix where <formula id="45">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll)$</formula>. </para>
+<para>Get orientation of the body with respect to inertial frame, in Euler&apos;s RPY form If we denote <formula id="81">$ A $</formula> as inertial frame and <formula id="82">$ B $</formula> as the frame attached to the body, then this method gives us the RPY 3d vector of Euler Angles when composed together gives us <formula id="83">$ {^A}R_B $</formula> as the rotation matrix where <formula id="85">$ {^A}R_B = Rot_z(yaw)Rot_y(pitch)Rot_x(roll)$</formula>. </para>
         </briefdescription>
         <detaileddescription>
-<para>For more details about the range of the RPY Euler angles, please refer the documentation of <ulink url="https://github.com/robotology/idyntree/blob/c8bf721b771fa4b1e7c3a940632e121060719a19/src/core/include/iDynTree/Core/Rotation.h#L167">GetRPY()</ulink></para>
+<para>For more details about the range of the RPY Euler angles, please refer the documentation of <ulink url="https://github.com/robotology/idyntree/blob/c8bf721b771fa4b1e7c3a940632e121060719a19/src/core/include/iDynTree/Rotation.h#L167">GetRPY()</ulink></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">rpy</parametername>
@@ -585,7 +585,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="138" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="131" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a14a59acedee3a36d1cb1a57c863f6e21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>size_t</type>
@@ -603,7 +603,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="139" column="12"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="132" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1ae5f871007add5e65389039743a88ab71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -616,10 +616,10 @@
           <declname>stateBuffer</declname>
         </param>
         <briefdescription>
-<para>Get internal state of the estimator The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
+<para>Get internal state of the estimator The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default internal state of the estimator would be <formula id="46">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
+<para>The default internal state of the estimator would be <formula id="86">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">stateBuffer</parametername>
 </parameternamelist>
@@ -634,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="140" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="133" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1af275b53472f9fa6f5f146f1f5a302bdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -647,10 +647,10 @@
           <declname>stateBuffer</declname>
         </param>
         <briefdescription>
-<para>Get initial internal state of the estimator The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
+<para>Get initial internal state of the estimator The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default internal state of the estimator would be <formula id="46">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
+<para>The default internal state of the estimator would be <formula id="86">$ X = \begin{bmatrix} 1.0 \\ 0_{1 \times 3} \\ 0_{1 \times 3} \\ 0_{1 \times 3} \end{bmatrix}^T $</formula> <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">stateBuffer</parametername>
 </parameternamelist>
@@ -665,7 +665,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="141" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="134" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a056cbfe2f712924c67609afcda054271" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -681,7 +681,7 @@
 <para>set internal state of the estimator. </para>
         </briefdescription>
         <detaileddescription>
-<para>The internal state of the estimator is described as <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <parameterlist kind="param"><parameteritem>
+<para>The internal state of the estimator is described as <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">stateBuffer</parametername>
 </parameternamelist>
@@ -696,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="142" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="135" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1AttitudeMahonyFilter_1a9f0c070353e6da5b2ad7b478de1eb7dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -712,7 +712,7 @@
 <para>set the initial orientation for the internal state of the estimator. </para>
         </briefdescription>
         <detaileddescription>
-<para>The initial orientation for the internal state of the estimator is described as <formula id="47">$ {^A}q_B $</formula> <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <parameterlist kind="param"><parameteritem>
+<para>The initial orientation for the internal state of the estimator is described as <formula id="87">$ {^A}q_B $</formula> <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">stateBuffer</parametername>
 </parameternamelist>
@@ -727,17 +727,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="143" column="10"/>
+        <location file="iDynTree/AttitudeMahonyFilter.h" line="136" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>explicit passive complementary filter on quaternion groups described in the paper <ulink url="https://hal.archives-ouvertes.fr/hal-00488376/document">Non-linear complementary filters on SO3 groups</ulink> </para>
     </briefdescription>
     <detaileddescription>
-<para>The filter is used to estimate the states <formula id="37">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> where <formula id="38">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="39">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="40">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <simplesect kind="note"><para>: we will drop the subscripts and superscripts in the rest of the documentation for convenience</para>
+<para>The filter is used to estimate the states <formula id="77">$ X = \begin{bmatrix} {^A}q_B \\ {^B}\Omega_{A,B} \\ {^B}b \end{bmatrix}^T $</formula> where <formula id="78">$ {^A}q_B \in \mathbb{R}^4 $</formula> is the quaternion representing the orientation of a body(IMU) frame with respect to an inertial frame , <formula id="79">$ {^B}\Omega_{A,B} \in \mathbb{R}^3 $</formula> is the angular velocity of a body(IMU) frame with respect to an inertial frame, expressed in the body frame and <formula id="80">$ {^B}b \in \mathbb{R}^3 $</formula> is the gyroscope bias expressed in the body frame. <simplesect kind="note"><para>: we will drop the subscripts and superscripts in the rest of the documentation for convenience</para>
 </simplesect>
-The discretized dynamics of the filter is implemented in the <ref refid="classiDynTree_1_1AttitudeMahonyFilter_1af743b419ed9b87c50cc3d3bd87c09ce0" kindref="member">propagateStates()</ref> method and is described by the following equations, <formula id="56">$ q_{k+1} = q_{k} + \Delta t \frac{1}{2}q_{k} \circ \begin{bmatrix} 0 \\ {\Omega_y}_{k+1} - b_k + K_p \omega_{mes_{k+1}}\end{bmatrix}$</formula> <formula id="57">$ \Omega_{k+1} = {\Omega_y}_{k+1} - b_k $</formula> <formula id="58">$ b_{k+1} = b_k - K_i \Delta t \frac{1}{2} \omega_{mes_{k+1}} $</formula></para>
-<para>The <ref refid="classiDynTree_1_1AttitudeMahonyFilter_1a761c1ce98405a7bf629e1e523e3649f5" kindref="member">updateFilterWithMeasurements()</ref> uses the recent IMU measurements to compute the term <formula id="59">$ \omega_{mes} $</formula> which gives the vectorial from accelerometer and magnetometer measurements <formula id="60">$ \omega_{mes} = -(\Sigma{n}{i=1} \frac{k_i}{2} (v_i \hat{v}_i^T - \hat{v}_i v_i^T) )^{\vee} $</formula> where <formula id="61">$ v_i $</formula> is the normalized accelerometer or magnetometer measurement, <formula id="62">$ \hat{v_i} $</formula> is the vector obtained from the orientation estimated combined with gravity direction or absolute magnetic field direction, for e.g, <formula id="63">$ \hat{v_acc} = {^w}R_b^T e_3 $</formula> and <formula id="64">$ k_i $</formula> is the confidence weight on the i-th measurement. In our case, i = 1 or 2.</para>
+The discretized dynamics of the filter is implemented in the <ref refid="classiDynTree_1_1AttitudeMahonyFilter_1af743b419ed9b87c50cc3d3bd87c09ce0" kindref="member">propagateStates()</ref> method and is described by the following equations, <formula id="96">$ q_{k+1} = q_{k} + \Delta t \frac{1}{2}q_{k} \circ \begin{bmatrix} 0 \\ {\Omega_y}_{k+1} - b_k + K_p \omega_{mes_{k+1}}\end{bmatrix}$</formula> <formula id="97">$ \Omega_{k+1} = {\Omega_y}_{k+1} - b_k $</formula> <formula id="98">$ b_{k+1} = b_k - K_i \Delta t \frac{1}{2} \omega_{mes_{k+1}} $</formula></para>
+<para>The <ref refid="classiDynTree_1_1AttitudeMahonyFilter_1a761c1ce98405a7bf629e1e523e3649f5" kindref="member">updateFilterWithMeasurements()</ref> uses the recent IMU measurements to compute the term <formula id="99">$ \omega_{mes} $</formula> which gives the vectorial from accelerometer and magnetometer measurements <formula id="100">$ \omega_{mes} = -(\Sigma{n}{i=1} \frac{k_i}{2} (v_i \hat{v}_i^T - \hat{v}_i v_i^T) )^{\vee} $</formula> where <formula id="101">$ v_i $</formula> is the normalized accelerometer or magnetometer measurement, <formula id="102">$ \hat{v_i} $</formula> is the vector obtained from the orientation estimated combined with gravity direction or absolute magnetic field direction, for e.g, <formula id="103">$ \hat{v_acc} = {^w}R_b^T e_3 $</formula> and <formula id="104">$ k_i $</formula> is the confidence weight on the i-th measurement. In our case, i = 1 or 2.</para>
 <para>The usage of the attitude estimator can be as follows,<itemizedlist>
 <listitem><para>After instantiation, the parameters of the filter can be set using the individual parameter methods or the struct method.</para>
 </listitem><listitem><para>The filter state can be initialized by calling the <ref refid="classiDynTree_1_1AttitudeMahonyFilter_1a056cbfe2f712924c67609afcda054271" kindref="member">setInternalState()</ref> method</para>
@@ -807,7 +807,7 @@ The discretized dynamics of the filter is implemented in the <ref refid="classiD
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="iDynTree/Estimation/AttitudeMahonyFilter.h" line="71" column="1" bodyfile="iDynTree/Estimation/AttitudeMahonyFilter.h" bodystart="72" bodyend="157"/>
+    <location file="iDynTree/AttitudeMahonyFilter.h" line="64" column="1" bodyfile="iDynTree/AttitudeMahonyFilter.h" bodystart="65" bodyend="150"/>
     <listofallmembers>
       <member refid="classiDynTree_1_1AttitudeMahonyFilter_1ae2a22d925e2bfac7f4c3f6a91a3a1871" prot="public" virt="non-virtual"><scope>iDynTree::AttitudeMahonyFilter</scope><name>AttitudeMahonyFilter</name></member>
       <member refid="classiDynTree_1_1AttitudeMahonyFilter_1af275b53472f9fa6f5f146f1f5a302bdc" prot="public" virt="virtual"><scope>iDynTree::AttitudeMahonyFilter</scope><name>getDefaultInternalInitialState</name></member>

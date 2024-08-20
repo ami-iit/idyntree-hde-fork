@@ -3,7 +3,7 @@
   <compounddef id="URDFModelExport_8h" kind="file" language="C++">
     <compoundname>URDFModelExport.h</compoundname>
     <includes local="no">string</includes>
-    <includes refid="ModelExporter_8h" local="no">iDynTree/ModelIO/ModelExporter.h</includes>
+    <includes refid="ModelExporter_8h" local="no">iDynTree/ModelExporter.h</includes>
     <incdepgraph>
       <node id="1">
         <label>private/URDFModelExport.h</label>
@@ -39,7 +39,7 @@
 <para>Export a <ref refid="classiDynTree_1_1Model" kindref="compound">iDynTree::Model</ref> object to a URDF file. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> for more details on supported and default options.</para>
+<para><simplesect kind="see"><para><ref refid="structiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> for more details on supported and default options.</para>
 </simplesect>
 <simplesect kind="warning"><para>This function does not support exporting sensor or solid shapes at the moment.</para>
 </simplesect>
@@ -56,7 +56,7 @@
 <parametername direction="in">options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the <ref refid="classiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> struct of options passed to the parser. </para>
+<para>the <ref refid="structiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> struct of options passed to the parser. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFModelExport.h" line="35" column="6" declfile="private/URDFModelExport.h" declline="35" declcolumn="6"/>
+        <location file="private/URDFModelExport.h" line="32" column="6" declfile="private/URDFModelExport.h" declline="32" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModelIO_1gab9223d51ca118bea013bbbde14d6e054" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -90,7 +90,7 @@
 <para>Export a <ref refid="classiDynTree_1_1Model" kindref="compound">iDynTree::Model</ref> object to a URDF string. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> for more details on supported and default options.</para>
+<para><simplesect kind="see"><para><ref refid="structiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> for more details on supported and default options.</para>
 </simplesect>
 <simplesect kind="warning"><para>This function does not support exporting sensor or solid shapes at the moment.</para>
 </simplesect>
@@ -99,7 +99,7 @@
 <parametername direction="in">options</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the <ref refid="classiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> struct of options passed to the parser. </para>
+<para>the <ref refid="structiDynTree_1_1ModelExporterOptions" kindref="compound">iDynTree::ModelExporterOptions</ref> struct of options passed to the parser. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFModelExport.h" line="51" column="6" declfile="private/URDFModelExport.h" declline="51" declcolumn="6"/>
+        <location file="private/URDFModelExport.h" line="48" column="6" declfile="private/URDFModelExport.h" declline="48" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

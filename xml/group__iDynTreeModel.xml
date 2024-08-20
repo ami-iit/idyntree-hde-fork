@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/Dynamics.h" line="45" column="10" declfile="iDynTree/Model/Dynamics.h" declline="45" declcolumn="10"/>
+        <location file="iDynTree/Dynamics.h" line="38" column="10" declfile="iDynTree/Dynamics.h" declline="38" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModel_1ga18613d41830aef7430e7a8a09fef98e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -149,7 +149,7 @@
 <parametername direction="in">linksVel</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Vector of left-trivialized velocities for each link of the model (for each link <formula id="20">$L$</formula>, the corresponding velocity is <formula id="138">${}^L \mathrm{v}_{A, L}$</formula>). </para>
+<para>Vector of left-trivialized velocities for each link of the model (for each link <formula id="3">$L$</formula>, the corresponding velocity is <formula id="4">${}^L \mathrm{v}_{A, L}$</formula>). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -157,7 +157,7 @@
 <parametername direction="in">linksProperAcc</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Vector of left-trivialized proper acceleration for each link of the model (for each link <formula id="20">$L$</formula>, the corresponding proper acceleration is <formula id="139">${}^L \dot{\mathrm{v}}_{A, L} - \begin{bmatrix} {}^L R_A {}^A g \\ 0_{3\times1} \end{bmatrix} $</formula>), where <formula id="140">$ {}^A g \in \mathbb{R}^3 $</formula> is the gravity acceleration expressed in an inertial frame <formula id="141">$A$</formula> . See iDynTree::LinkNetExternalWrenches . </para>
+<para>Vector of left-trivialized proper acceleration for each link of the model (for each link <formula id="3">$L$</formula>, the corresponding proper acceleration is <formula id="5">${}^L \dot{\mathrm{v}}_{A, L} - \begin{bmatrix} {}^L R_A {}^A g \\ 0_{3\times1} \end{bmatrix} $</formula>), where <formula id="6">$ {}^A g \in \mathbb{R}^3 $</formula> is the gravity acceleration expressed in an inertial frame <formula id="7">$A$</formula> . See iDynTree::LinkNetExternalWrenches . </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -165,7 +165,7 @@
 <parametername direction="in">linkExtForces</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Vector of external 6D force/torques applied to the links. For each link <formula id="20">$L$</formula>, the corresponding external force is <formula id="142">${}_L \mathrm{f}^x_L$</formula>, i.e. the force that the enviroment applies on the on the link <formula id="20">$L$</formula>, expressed in the link frame <formula id="20">$L$</formula>. </para>
+<para>Vector of external 6D force/torques applied to the links. For each link <formula id="3">$L$</formula>, the corresponding external force is <formula id="8">${}_L \mathrm{f}^x_L$</formula>, i.e. the force that the enviroment applies on the on the link <formula id="3">$L$</formula>, expressed in the link frame <formula id="3">$L$</formula>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -189,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/Dynamics.h" line="79" column="10" declfile="iDynTree/Model/Dynamics.h" declline="79" declcolumn="10"/>
+        <location file="iDynTree/Dynamics.h" line="72" column="10" declfile="iDynTree/Dynamics.h" declline="72" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModel_1ga5879141982887fc0d049cc3645f10dd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/Dynamics.h" line="154" column="10" declfile="iDynTree/Model/Dynamics.h" declline="154" declcolumn="10"/>
+        <location file="iDynTree/Dynamics.h" line="147" column="10" declfile="iDynTree/Dynamics.h" declline="147" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModel_1ga0c75db73b7682b9c524b0727b516b12b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -295,7 +295,7 @@
 <parametername direction="in">referenceFrame_H_link</parametername>
 </parameternamelist>
 <parameterdescription>
-<para><ref refid="classiDynTree_1_1Position" kindref="compound">Position</ref> of each link w.r.t. to given frame D (tipically an inertial frame A, the base frame B or the mixed frame B[A]). For each link <formula id="20">$L$</formula>, the corresponding transform is <formula id="143">${}^D H_L$</formula>. </para>
+<para><ref refid="classiDynTree_1_1Position" kindref="compound">Position</ref> of each link w.r.t. to given frame D (tipically an inertial frame A, the base frame B or the mixed frame B[A]). For each link <formula id="3">$L$</formula>, the corresponding transform is <formula id="9">${}^D H_L$</formula>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -303,7 +303,7 @@
 <parametername direction="in">linksVel</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Vector of left-trivialized velocities for each link of the model (for each link <formula id="20">$L$</formula>, the corresponding velocity is <formula id="138">${}^L \mathrm{v}_{A, L}$</formula>). </para>
+<para>Vector of left-trivialized velocities for each link of the model (for each link <formula id="3">$L$</formula>, the corresponding velocity is <formula id="4">${}^L \mathrm{v}_{A, L}$</formula>). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -311,7 +311,7 @@
 <parametername direction="in">linksProperAcc</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Vector of left-trivialized proper acceleration for each link of the model (for each link <formula id="20">$L$</formula>, the corresponding proper acceleration is <formula id="139">${}^L \dot{\mathrm{v}}_{A, L} - \begin{bmatrix} {}^L R_A {}^A g \\ 0_{3\times1} \end{bmatrix} $</formula>), where <formula id="140">$ {}^A g \in \mathbb{R}^3 $</formula> is the gravity acceleration expressed in an inertial frame <formula id="141">$A$</formula> . </para>
+<para>Vector of left-trivialized proper acceleration for each link of the model (for each link <formula id="3">$L$</formula>, the corresponding proper acceleration is <formula id="5">${}^L \dot{\mathrm{v}}_{A, L} - \begin{bmatrix} {}^L R_A {}^A g \\ 0_{3\times1} \end{bmatrix} $</formula>), where <formula id="6">$ {}^A g \in \mathbb{R}^3 $</formula> is the gravity acceleration expressed in an inertial frame <formula id="7">$A$</formula> . </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -327,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/Dynamics.h" line="187" column="10" declfile="iDynTree/Model/Dynamics.h" declline="187" declcolumn="10"/>
+        <location file="iDynTree/Dynamics.h" line="180" column="10" declfile="iDynTree/Dynamics.h" declline="180" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModel_1ga41ad76666d447a42318ab5778b3ad18e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -406,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/ForwardKinematics.h" line="44" column="10" declfile="iDynTree/Model/ForwardKinematics.h" declline="44" declcolumn="10"/>
+        <location file="iDynTree/ForwardKinematics.h" line="37" column="10" declfile="iDynTree/ForwardKinematics.h" declline="37" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group__iDynTreeModel_1gab0b6f0ce3e6e175b1532bdd897fd83c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -520,7 +520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Model/Jacobians.h" line="48" column="10" declfile="iDynTree/Model/Jacobians.h" declline="48" declcolumn="10"/>
+        <location file="iDynTree/Jacobians.h" line="41" column="10" declfile="iDynTree/Jacobians.h" declline="41" declcolumn="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

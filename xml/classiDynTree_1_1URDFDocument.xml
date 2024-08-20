@@ -15,20 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="38" column="21" bodyfile="private/URDFDocument.h" bodystart="38" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1a77a9951974208787eb904b6ec546247f" prot="private" static="no" mutable="no">
-        <type><ref refid="classiDynTree_1_1SensorsList" kindref="compound">iDynTree::SensorsList</ref></type>
-        <definition>iDynTree::SensorsList iDynTree::URDFDocument::m_sensors</definition>
-        <argsstring></argsstring>
-        <name>m_sensors</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="private/URDFDocument.h" line="39" column="27" bodyfile="private/URDFDocument.h" bodystart="39" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="30" column="21" bodyfile="private/URDFDocument.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1a549f3e8d21c8ac65721bc9b49c1b1f51" prot="private" static="no" mutable="no">
         <type><ref refid="structiDynTree_1_1ModelParserOptions" kindref="compound">iDynTree::ModelParserOptions</ref></type>
@@ -41,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="41" column="34" bodyfile="private/URDFDocument.h" bodystart="41" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="32" column="34" bodyfile="private/URDFDocument.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1afac06a42b83a32603c46ff39a205347b" prot="private" static="no" mutable="no">
         <type>struct iDynTree::URDFDocument::@5</type>
@@ -54,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="52" column="15"/>
+        <location file="private/URDFDocument.h" line="43" column="15"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -69,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="45" column="21" bodyfile="private/URDFDocument.h" bodystart="45" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="36" column="21" bodyfile="private/URDFDocument.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1a94c9fb5372fff427e6eefa501fa9d2a8" prot="public" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, <ref refid="structiDynTree_1_1JointElement_1_1JointInfo" kindref="compound">JointElement::JointInfo</ref> &gt;</type>
@@ -82,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="46" column="28" bodyfile="private/URDFDocument.h" bodystart="46" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="37" column="28" bodyfile="private/URDFDocument.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1af869c50633a0784f6452ed0e6a5ed176" prot="public" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, <ref refid="structiDynTree_1_1JointElement_1_1JointInfo" kindref="compound">JointElement::JointInfo</ref> &gt;</type>
@@ -95,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="47" column="28" bodyfile="private/URDFDocument.h" bodystart="47" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="38" column="28" bodyfile="private/URDFDocument.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1a71e86291a5b358bb75fed272e2e1e304" prot="public" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, <ref refid="structiDynTree_1_1MaterialElement_1_1MaterialInfo" kindref="compound">MaterialElement::MaterialInfo</ref> &gt;</type>
@@ -108,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="48" column="28" bodyfile="private/URDFDocument.h" bodystart="48" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="39" column="28" bodyfile="private/URDFDocument.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1ad6c09ba92ed27b5fb377d933293c9326" prot="public" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, std::vector&lt; <ref refid="structiDynTree_1_1VisualElement_1_1VisualInfo" kindref="compound">VisualElement::VisualInfo</ref> &gt; &gt;</type>
@@ -121,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="49" column="28" bodyfile="private/URDFDocument.h" bodystart="49" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="40" column="28" bodyfile="private/URDFDocument.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classiDynTree_1_1URDFDocument_1adb3498e68464efe5d7674698a889e64f" prot="public" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, std::vector&lt; <ref refid="structiDynTree_1_1VisualElement_1_1VisualInfo" kindref="compound">VisualElement::VisualInfo</ref> &gt; &gt;</type>
@@ -134,22 +121,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="50" column="28" bodyfile="private/URDFDocument.h" bodystart="50" bodyend="-1"/>
+        <location file="private/URDFDocument.h" line="41" column="28" bodyfile="private/URDFDocument.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1ae82ec0055e74c89ad5979f739d1d6093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1a3f1afc0c242c04e4310e4efae091cf4c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>iDynTree::URDFDocument::URDFDocument</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(XMLParserState &amp;parserState, const iDynTree::ModelParserOptions &amp;parserOptions)</argsstring>
         <name>URDFDocument</name>
+        <param>
+          <type><ref refid="classiDynTree_1_1XMLParserState" kindref="compound">XMLParserState</ref> &amp;</type>
+          <declname>parserState</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structiDynTree_1_1ModelParserOptions" kindref="compound">iDynTree::ModelParserOptions</ref> &amp;</type>
+          <declname>parserOptions</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="55" column="5"/>
+        <location file="private/URDFDocument.h" line="46" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1aa13d227666daa2e893613220697b3a69" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -162,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="56" column="13"/>
+        <location file="private/URDFDocument.h" line="47" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1a64b806c80262d0b823a9e0224752aec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structiDynTree_1_1ModelParserOptions" kindref="compound">iDynTree::ModelParserOptions</ref> &amp;</type>
@@ -175,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="58" column="34"/>
+        <location file="private/URDFDocument.h" line="49" column="34"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1a6d7027a9bf0d1ac747aead3ad89ea385" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classiDynTree_1_1Model" kindref="compound">iDynTree::Model</ref> &amp;</type>
@@ -188,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="60" column="27"/>
+        <location file="private/URDFDocument.h" line="51" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1ac6370e22cd6cd18196c63bcc9b5e6f9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classiDynTree_1_1SensorsList" kindref="compound">iDynTree::SensorsList</ref> &amp;</type>
@@ -201,17 +196,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="61" column="33"/>
+        <location file="private/URDFDocument.h" line="52" column="33"/>
       </memberdef>
-      <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1a20cc305f59f08294b43e048d4ed30076" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1a767a44a4d8c3db4bcc7e78fb2273e2ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>std::shared_ptr&lt; <ref refid="classiDynTree_1_1XMLElement" kindref="compound">XMLElement</ref> &gt;</type>
         <definition>std::shared_ptr&lt;XMLElement&gt; iDynTree::URDFDocument::rootElementForName</definition>
-        <argsstring>(const std::string &amp;name) override</argsstring>
+        <argsstring>(const std::string &amp;name, const std::vector&lt; std::string &gt; &amp;packageDirs) override</argsstring>
         <name>rootElementForName</name>
-        <reimplements refid="classiDynTree_1_1XMLDocument_1a3cdb084e6ae5b9f678a3290000e345f5">rootElementForName</reimplements>
+        <reimplements refid="classiDynTree_1_1XMLDocument_1a7ad456c9c0449f8d342fbc82bf0a3aa0">rootElementForName</reimplements>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>packageDirs</declname>
         </param>
         <briefdescription>
 <para>Factory method to create the XML root element given for the specified name. </para>
@@ -232,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="63" column="21"/>
+        <location file="private/URDFDocument.h" line="54" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1URDFDocument_1af4b51c607132c29d08581fc16033ca4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -246,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="private/URDFDocument.h" line="64" column="10"/>
+        <location file="private/URDFDocument.h" line="56" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -266,27 +265,27 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="26">
+      <node id="25">
         <label>std::unordered_map&lt; std::string, iDynTree::MaterialElement::MaterialInfo &gt;</label>
-        <childnode refid="27" relation="usage">
+        <childnode refid="26" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="24" relation="template-instance">
+        <childnode refid="23" relation="template-instance">
           <edgelabel>&lt; std::string, iDynTree::MaterialElement::MaterialInfo &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="21">
+      <node id="19">
         <label>iDynTree::VectorFixSize&lt; VecSize &gt;</label>
         <link refid="classiDynTree_1_1VectorFixSize"/>
       </node>
-      <node id="32">
+      <node id="31">
         <label>iDynTree::Axis</label>
         <link refid="classiDynTree_1_1Axis"/>
       </node>
-      <node id="25">
+      <node id="24">
         <label>K</label>
       </node>
       <node id="6">
@@ -302,12 +301,6 @@
         <label>iDynTree::Rotation</label>
         <link refid="classiDynTree_1_1Rotation"/>
         <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>iDynTree::PositionRaw</label>
-        <link refid="classiDynTree_1_1PositionRaw"/>
-        <childnode refid="20" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
@@ -328,13 +321,16 @@
         <childnode refid="13" relation="usage">
           <edgelabel>m_origin</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>m_name</edgelabel>
         </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_packageDirs</edgelabel>
+        </childnode>
       </node>
-      <node id="24">
+      <node id="23">
         <label>std::unordered_map&lt; K, T &gt;</label>
-        <childnode refid="25" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
@@ -353,32 +349,26 @@
           <edgelabel>&lt; iDynTree::SensorHelper &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="29">
+      <node id="28">
         <label>std::unordered_map&lt; std::string, iDynTree::JointElement::JointInfo &gt;</label>
-        <childnode refid="30" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="24" relation="template-instance">
+        <childnode refid="23" relation="template-instance">
           <edgelabel>&lt; std::string, iDynTree::JointElement::JointInfo &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>std::basic_string&lt; Char &gt;</label>
       </node>
-      <node id="16">
+      <node id="15">
         <label>Matrix3x3</label>
         <link refid="classiDynTree_1_1MatrixFixSize"/>
-        <childnode refid="17" relation="template-instance">
+        <childnode refid="16" relation="template-instance">
           <edgelabel>&lt; 3, 3 &gt;</edgelabel>
-        </childnode>
-      </node>
-      <node id="15">
-        <label>iDynTree::RotationRaw</label>
-        <link refid="classiDynTree_1_1RotationRaw"/>
-        <childnode refid="16" relation="public-inheritance">
         </childnode>
       </node>
       <node id="12">
@@ -387,17 +377,26 @@
           <edgelabel>&lt; iDynTree::SolidShape &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="18">
+      <node id="17">
         <label>iDynTree::Position</label>
         <link refid="classiDynTree_1_1Position"/>
-        <childnode refid="19" relation="public-inheritance">
+        <childnode refid="18" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="16">
         <label>iDynTree::MatrixFixSize&lt; nRows, nCols &gt;</label>
         <link refid="classiDynTree_1_1MatrixFixSize"/>
       </node>
-      <node id="31">
+      <node id="22">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="20" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="template-instance">
+          <edgelabel>&lt; std::string &gt;</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
         <label>std::shared_ptr&lt; iDynTree::IJoint &gt;</label>
         <childnode refid="5" relation="template-instance">
           <edgelabel>&lt; iDynTree::IJoint &gt;</edgelabel>
@@ -430,35 +429,35 @@
         <childnode refid="9" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="24" relation="template-instance">
+        <childnode refid="23" relation="template-instance">
           <edgelabel>&lt; std::string, std::vector&lt; iDynTree::VisualElement::VisualInfo &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="27">
+      <node id="26">
         <label>iDynTree::MaterialElement::MaterialInfo</label>
         <link refid="structiDynTree_1_1MaterialElement_1_1MaterialInfo"/>
-        <childnode refid="28" relation="usage">
+        <childnode refid="27" relation="usage">
           <edgelabel>m_rgba</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>m_name</edgelabel>
           <edgelabel>m_textureFilename</edgelabel>
         </childnode>
       </node>
-      <node id="30">
+      <node id="29">
         <label>iDynTree::JointElement::JointInfo</label>
         <link refid="structiDynTree_1_1JointElement_1_1JointInfo"/>
-        <childnode refid="31" relation="usage">
+        <childnode refid="30" relation="usage">
           <edgelabel>joint</edgelabel>
         </childnode>
-        <childnode refid="22" relation="usage">
+        <childnode refid="20" relation="usage">
           <edgelabel>childLinkName</edgelabel>
           <edgelabel>parentLinkName</edgelabel>
         </childnode>
-        <childnode refid="32" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>axis</edgelabel>
         </childnode>
       </node>
@@ -474,24 +473,24 @@
           <edgelabel>collisions</edgelabel>
           <edgelabel>visuals</edgelabel>
         </childnode>
-        <childnode refid="26" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>materials</edgelabel>
         </childnode>
-        <childnode refid="29" relation="usage">
+        <childnode refid="28" relation="usage">
           <edgelabel>fixedJoints</edgelabel>
           <edgelabel>joints</edgelabel>
         </childnode>
       </node>
-      <node id="28">
+      <node id="27">
         <label>std::shared_ptr&lt; iDynTree::VectorFixSize &gt;</label>
         <childnode refid="5" relation="template-instance">
           <edgelabel>&lt; iDynTree::VectorFixSize &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="20">
+      <node id="18">
         <label>Vector3</label>
         <link refid="classiDynTree_1_1VectorFixSize"/>
-        <childnode refid="21" relation="template-instance">
+        <childnode refid="19" relation="template-instance">
           <edgelabel>&lt; 3 &gt;</edgelabel>
         </childnode>
       </node>
@@ -501,37 +500,37 @@
         <childnode refid="14" relation="usage">
           <edgelabel>rot</edgelabel>
         </childnode>
-        <childnode refid="18" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>pos</edgelabel>
         </childnode>
       </node>
-      <node id="22">
+      <node id="20">
         <label>std::string</label>
-        <childnode refid="23" relation="public-inheritance">
+        <childnode refid="21" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="private/URDFDocument.h" line="36" column="1" bodyfile="private/URDFDocument.h" bodystart="36" bodyend="65"/>
+    <location file="private/URDFDocument.h" line="28" column="1" bodyfile="private/URDFDocument.h" bodystart="28" bodyend="57"/>
     <listofallmembers>
       <member refid="classiDynTree_1_1URDFDocument_1adb3498e68464efe5d7674698a889e64f" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>collisions</name></member>
       <member refid="classiDynTree_1_1XMLDocument_1a09f709b05c0f1f12670763848deeebf8" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>description</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1af4b51c607132c29d08581fc16033ca4b" prot="public" virt="virtual"><scope>iDynTree::URDFDocument</scope><name>documentHasBeenParsed</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1af869c50633a0784f6452ed0e6a5ed176" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>fixedJoints</name></member>
+      <member refid="classiDynTree_1_1XMLDocument_1a50a4ed8a7c02beff7438e100ad0e70dd" prot="protected" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>getParserState</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a94c9fb5372fff427e6eefa501fa9d2a8" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>joints</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1afac06a42b83a32603c46ff39a205347b" prot="private" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>m_buffers</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a02d7c7d35dce069c5665f177896f6a60" prot="private" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>m_model</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a549f3e8d21c8ac65721bc9b49c1b1f51" prot="private" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>m_options</name></member>
-      <member refid="classiDynTree_1_1URDFDocument_1a77a9951974208787eb904b6ec546247f" prot="private" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>m_sensors</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a71e86291a5b358bb75fed272e2e1e304" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>materials</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a6d7027a9bf0d1ac747aead3ad89ea385" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>model</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1a64b806c80262d0b823a9e0224752aec6" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>options</name></member>
       <member refid="classiDynTree_1_1XMLDocument_1afb50b3119f4c453c96c80925dd6a6791" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>root</name></member>
-      <member refid="classiDynTree_1_1URDFDocument_1a20cc305f59f08294b43e048d4ed30076" prot="public" virt="virtual"><scope>iDynTree::URDFDocument</scope><name>rootElementForName</name></member>
+      <member refid="classiDynTree_1_1URDFDocument_1a767a44a4d8c3db4bcc7e78fb2273e2ef" prot="public" virt="virtual"><scope>iDynTree::URDFDocument</scope><name>rootElementForName</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1aeee45e879a758d6074a9c58390ff3a15" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>sensorHelpers</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1ac6370e22cd6cd18196c63bcc9b5e6f9f" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>sensors</name></member>
-      <member refid="classiDynTree_1_1URDFDocument_1ae82ec0055e74c89ad5979f739d1d6093" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>URDFDocument</name></member>
+      <member refid="classiDynTree_1_1URDFDocument_1a3f1afc0c242c04e4310e4efae091cf4c" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>URDFDocument</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1ad6c09ba92ed27b5fb377d933293c9326" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>visuals</name></member>
-      <member refid="classiDynTree_1_1XMLDocument_1a94ea906352e78e3e5b9dde135b102297" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>XMLDocument</name></member>
+      <member refid="classiDynTree_1_1XMLDocument_1a4a06a29e49c4aae08d658b530898b3e2" prot="public" virt="non-virtual"><scope>iDynTree::URDFDocument</scope><name>XMLDocument</name></member>
       <member refid="classiDynTree_1_1URDFDocument_1aa13d227666daa2e893613220697b3a69" prot="public" virt="virtual"><scope>iDynTree::URDFDocument</scope><name>~URDFDocument</name></member>
       <member refid="classiDynTree_1_1XMLDocument_1a4d065a940ba5b49300c5566bbccfb9d5" prot="public" virt="virtual"><scope>iDynTree::URDFDocument</scope><name>~XMLDocument</name></member>
     </listofallmembers>

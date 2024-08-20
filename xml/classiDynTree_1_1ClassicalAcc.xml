@@ -3,7 +3,7 @@
   <compounddef id="classiDynTree_1_1ClassicalAcc" kind="class" language="C++" prot="public">
     <compoundname>iDynTree::ClassicalAcc</compoundname>
     <basecompoundref refid="classiDynTree_1_1VectorFixSize" prot="public" virt="non-virtual">iDynTree::VectorFixSize&lt; 6 &gt;</basecompoundref>
-    <includes local="no">iDynTree/Core/ClassicalAcc.h</includes>
+    <includes local="no">iDynTree/ClassicalAcc.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1af2840c213b585301e38240715afbb360" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="49" column="16" bodyfile="iDynTree/Core/ClassicalAcc.h" bodystart="49" bodyend="49"/>
+        <location file="iDynTree/ClassicalAcc.h" line="42" column="16" bodyfile="iDynTree/ClassicalAcc.h" bodystart="42" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1acb7b4a36b251b50c79af8b06037977cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="50" column="9"/>
+        <location file="iDynTree/ClassicalAcc.h" line="43" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1a9ce69cc1e892338d4e2d0b5c13ebbedf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -56,15 +56,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="51" column="9"/>
+        <location file="iDynTree/ClassicalAcc.h" line="44" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1aca1ce7ef6cd00e20ae9cf786eb0c8d00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1abfe45c4f44f4ef12ef64f98d8edd504d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classiDynTree_1_1ClassicalAcc" kindref="compound">ClassicalAcc</ref> &amp;</type>
         <definition>const ClassicalAcc&amp; iDynTree::ClassicalAcc::changeCoordFrame</definition>
-        <argsstring>(const RotationRaw &amp;newCoordFrame)</argsstring>
+        <argsstring>(const Rotation &amp;newCoordFrame)</argsstring>
         <name>changeCoordFrame</name>
         <param>
-          <type>const <ref refid="classiDynTree_1_1RotationRaw" kindref="compound">RotationRaw</ref> &amp;</type>
+          <type>const <ref refid="classiDynTree_1_1Rotation" kindref="compound">Rotation</ref> &amp;</type>
           <declname>newCoordFrame</declname>
         </param>
         <briefdescription>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="54" column="29"/>
+        <location file="iDynTree/ClassicalAcc.h" line="47" column="29"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1ab0e6e43ee966f2533517c85785b0caf1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classiDynTree_1_1VectorFixSize" kindref="compound">Vector3</ref></type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="59" column="17"/>
+        <location file="iDynTree/ClassicalAcc.h" line="52" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1a3379201467dbcfad92ee7c3db9568513" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classiDynTree_1_1VectorFixSize" kindref="compound">Vector3</ref></type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="60" column="17"/>
+        <location file="iDynTree/ClassicalAcc.h" line="53" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1aa79bec4d759003f661270ac600dd5712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="66" column="14"/>
+        <location file="iDynTree/ClassicalAcc.h" line="59" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1ClassicalAcc_1aae939ebabb53cb1270daffc48b62571c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="71" column="14"/>
+        <location file="iDynTree/ClassicalAcc.h" line="64" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/ClassicalAcc.h" line="57" column="29"/>
+        <location file="iDynTree/ClassicalAcc.h" line="50" column="29"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -195,14 +195,14 @@
         <link refid="classiDynTree_1_1VectorFixSize"/>
       </node>
     </collaborationgraph>
-    <location file="iDynTree/Core/ClassicalAcc.h" line="41" column="5" bodyfile="iDynTree/Core/ClassicalAcc.h" bodystart="42" bodyend="73"/>
+    <location file="iDynTree/ClassicalAcc.h" line="34" column="5" bodyfile="iDynTree/ClassicalAcc.h" bodystart="35" bodyend="66"/>
     <listofallmembers>
       <member refid="classiDynTree_1_1VectorFixSize_1ad0f06a255dc213a5904d232f703a0192" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>allocator_type</name></member>
       <member refid="classiDynTree_1_1VectorFixSize_1affa1eab2d54d8227d8aeb402dc2dc1f7" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>begin</name></member>
       <member refid="classiDynTree_1_1VectorFixSize_1a8e64a7875375a8b1b894614ba882ad05" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>begin</name></member>
       <member refid="classiDynTree_1_1VectorFixSize_1a1420c32072d5c1e21140da111955a6d1" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>cbegin</name></member>
       <member refid="classiDynTree_1_1VectorFixSize_1a0b5d60b77fbd7ba982e855453800f776" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>cend</name></member>
-      <member refid="classiDynTree_1_1ClassicalAcc_1aca1ce7ef6cd00e20ae9cf786eb0c8d00" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>changeCoordFrame</name></member>
+      <member refid="classiDynTree_1_1ClassicalAcc_1abfe45c4f44f4ef12ef64f98d8edd504d" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>changeCoordFrame</name></member>
       <member refid="classiDynTree_1_1ClassicalAcc_1af2840c213b585301e38240715afbb360" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>ClassicalAcc</name></member>
       <member refid="classiDynTree_1_1ClassicalAcc_1acb7b4a36b251b50c79af8b06037977cf" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>ClassicalAcc</name></member>
       <member refid="classiDynTree_1_1ClassicalAcc_1a9ce69cc1e892338d4e2d0b5c13ebbedf" prot="public" virt="non-virtual"><scope>iDynTree::ClassicalAcc</scope><name>ClassicalAcc</name></member>

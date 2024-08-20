@@ -5,7 +5,7 @@
     <basecompoundref refid="classiDynTree_1_1SpatialVector" prot="public" virt="non-virtual">iDynTree::SpatialVector&lt; SpatialForceVector &gt;</basecompoundref>
     <derivedcompoundref refid="classiDynTree_1_1SpatialMomentum" prot="public" virt="non-virtual">iDynTree::SpatialMomentum</derivedcompoundref>
     <derivedcompoundref refid="classiDynTree_1_1Wrench" prot="public" virt="non-virtual">iDynTree::Wrench</derivedcompoundref>
-    <includes local="no">iDynTree/Core/SpatialForceVector.h</includes>
+    <includes local="no">iDynTree/SpatialForceVector.h</includes>
       <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classiDynTree_1_1SpatialForceVector_1a2d86d89ba38e46bfe38631258bd8571a" prot="public" static="no">
         <type><ref refid="classiDynTree_1_1SpatialMotionForceVectorT__traits" kindref="compound">SpatialMotionForceVectorT_traits</ref>&lt; <ref refid="classiDynTree_1_1SpatialForceVector" kindref="compound">SpatialForceVector</ref> &gt;::LinearVector3Type</type>
@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="44" column="70" bodyfile="iDynTree/Core/SpatialForceVector.h" bodystart="44" bodyend="-1"/>
+        <location file="iDynTree/SpatialForceVector.h" line="37" column="70" bodyfile="iDynTree/SpatialForceVector.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classiDynTree_1_1SpatialForceVector_1a6302c479904a175eb6c61c9de390d287" prot="public" static="no">
         <type><ref refid="classiDynTree_1_1SpatialMotionForceVectorT__traits" kindref="compound">SpatialMotionForceVectorT_traits</ref>&lt; <ref refid="classiDynTree_1_1SpatialForceVector" kindref="compound">SpatialForceVector</ref> &gt;::AngularVector3Type</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="45" column="71" bodyfile="iDynTree/Core/SpatialForceVector.h" bodystart="45" bodyend="-1"/>
+        <location file="iDynTree/SpatialForceVector.h" line="38" column="71" bodyfile="iDynTree/SpatialForceVector.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="52" column="16" bodyfile="iDynTree/Core/SpatialForceVector.h" bodystart="52" bodyend="52"/>
+        <location file="iDynTree/SpatialForceVector.h" line="45" column="16" bodyfile="iDynTree/SpatialForceVector.h" bodystart="45" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1SpatialForceVector_1af876de5a159ec7941aa102a9ba2c9511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="53" column="9"/>
+        <location file="iDynTree/SpatialForceVector.h" line="46" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1SpatialForceVector_1a1524ab2d4869030e0afd4b3039a22b08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="54" column="9"/>
+        <location file="iDynTree/SpatialForceVector.h" line="47" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1SpatialForceVector_1a64cb561fa22a1fa8149764d64dd2c6cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="55" column="9"/>
+        <location file="iDynTree/SpatialForceVector.h" line="48" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1SpatialForceVector_1a276d6b32c67b5a7ba365cf03411e8790" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="56" column="17"/>
+        <location file="iDynTree/SpatialForceVector.h" line="49" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classiDynTree_1_1SpatialForceVector_1ac96276a6d073a19752aea3ef4183d608" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classiDynTree_1_1SpatialForceVector" kindref="compound">SpatialForceVector</ref></type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="iDynTree/Core/SpatialForceVector.h" line="59" column="28"/>
+        <location file="iDynTree/SpatialForceVector.h" line="52" column="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -143,7 +143,7 @@
     <detaileddescription>
 <para>vector form of an element of se*(3)).</para>
 <para>A force spatial vector can be used to to described spatial momentum, wrench, or their derivatives.</para>
-<para>This is just a basic vector, used to implement the adjoint transformations in a general way. The relative adjoint transformation is contained in TransformRaw::apply(SpatialForceRaw), for consistency with the <ref refid="classiDynTree_1_1PositionRaw" kindref="compound">iDynTree::PositionRaw</ref> class.</para>
+<para>This is just a basic vector, used to implement the adjoint transformations in a general way. The relative adjoint transformation is contained in Transform::apply(SpatialForce), for consistency with the <ref refid="classiDynTree_1_1Position" kindref="compound">iDynTree::Position</ref> class.</para>
 <para><simplesect kind="note"><para>in iDynTree, the spatial vector follows this serialization: the first three elements are the linear part and the second three elements are the angular part. </para>
 </simplesect>
 </para>
@@ -213,7 +213,7 @@
         <link refid="classiDynTree_1_1SpatialMotionForceVectorT__traits"/>
       </node>
     </collaborationgraph>
-    <location file="iDynTree/Core/SpatialForceVector.h" line="37" column="5" bodyfile="iDynTree/Core/SpatialForceVector.h" bodystart="38" bodyend="60"/>
+    <location file="iDynTree/SpatialForceVector.h" line="30" column="5" bodyfile="iDynTree/SpatialForceVector.h" bodystart="31" bodyend="53"/>
     <listofallmembers>
       <member refid="classiDynTree_1_1SpatialVector_1a45a617c3a2fbf58cb8f14be36a9f0ff5" prot="protected" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>angularOffset</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1a7713fdb080783747a894974f5c4b44a6" prot="protected" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>angularVec3</name></member>
@@ -239,6 +239,7 @@
       <member refid="classiDynTree_1_1SpatialVector_1aee117ebb24cae309a169f678019f1181" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>operator+</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1afcf112b3ddd4e01fc0389dd2319eb383" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>operator-</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1a3ac59b03e3786339836b9b7d190f39e3" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>operator-</name></member>
+      <member refid="classiDynTree_1_1SpatialVector_1a739d85b3a1b3af607344f9fc8e930b0c" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>operator=</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1a73b398dd07e9f3dd5c252692380a6b02" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>reservedToString</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1a719a64c179d736390f48b6ddd0ccf6fa" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>setAngularVec3</name></member>
       <member refid="classiDynTree_1_1SpatialVector_1a171e7cf6e215e67eb32ac791526a044f" prot="public" virt="non-virtual"><scope>iDynTree::SpatialForceVector</scope><name>setLinearVec3</name></member>

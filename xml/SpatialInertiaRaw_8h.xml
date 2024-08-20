@@ -2,14 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="SpatialInertiaRaw_8h" kind="file" language="C++">
     <compoundname>SpatialInertiaRaw.h</compoundname>
-    <includes refid="RotationalInertiaRaw_8h" local="no">iDynTree/Core/RotationalInertiaRaw.h</includes>
-    <includedby refid="SpatialInertia_8h" local="no">iDynTree/Core/SpatialInertia.h</includedby>
-    <innerclass refid="classiDynTree_1_1SpatialInertiaRaw" prot="public">iDynTree::SpatialInertiaRaw</innerclass>
-    <innernamespace refid="namespaceiDynTree">iDynTree</innernamespace>
+    <includes refid="SpatialInertia_8h" local="no">iDynTree/SpatialInertia.h</includes>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="iDynTree/Core/SpatialInertiaRaw.h"/>
+    <location file="iDynTree/SpatialInertiaRaw.h"/>
   </compounddef>
 </doxygen>

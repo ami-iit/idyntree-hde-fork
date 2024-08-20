@@ -2,21 +2,23 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="ModelLoader_8h" kind="file" language="C++">
     <compoundname>ModelLoader.h</compoundname>
-    <includes refid="Model_8h" local="no">iDynTree/Model/Model.h</includes>
-    <includes refid="Sensors_8h" local="no">iDynTree/Sensors/Sensors.h</includes>
+    <includes refid="Model_8h" local="no">iDynTree/Model.h</includes>
+    <includes refid="Sensors_8h" local="no">iDynTree/Sensors.h</includes>
+    <includes local="no">unordered_map</includes>
     <includes local="no">memory</includes>
     <includes local="no">string</includes>
     <includes local="no">vector</includes>
+    <includedby refid="ModelIO_2ModelLoader_8h" local="no">iDynTree/ModelIO/ModelLoader.h</includedby>
     <includedby refid="URDFDocument_8h" local="yes">private/URDFDocument.h</includedby>
     <incdepgraph>
-      <node id="3">
+      <node id="4">
         <label>string</label>
       </node>
-      <node id="4">
+      <node id="5">
         <label>vector</label>
       </node>
       <node id="1">
-        <label>iDynTree/ModelIO/ModelLoader.h</label>
+        <label>iDynTree/ModelLoader.h</label>
         <link refid="ModelLoader_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -24,8 +26,13 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="2">
+        <label>unordered_map</label>
+      </node>
+      <node id="3">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -36,6 +43,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="iDynTree/ModelIO/ModelLoader.h"/>
+    <location file="iDynTree/ModelLoader.h"/>
   </compounddef>
 </doxygen>

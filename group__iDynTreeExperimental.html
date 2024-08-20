@@ -76,6 +76,10 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
+              class <a href="classiDynTree_1_1InverseKinematics.html" class="m-doc">iDynTree::InverseKinematics</a>
+            </dt>
+            <dd>NLP-based Inverse kinematics.</dd>
+            <dt>
               struct <a href="structiDynTree_1_1BerdyOptions.html" class="m-doc">iDynTree::BerdyOptions</a>
             </dt>
             <dd>Options of the <a href="classiDynTree_1_1BerdyHelper.html" class="m-doc">BerdyHelper</a> class.</dd>
@@ -91,10 +95,6 @@
               class <a href="classiDynTree_1_1BerdySparseMAPSolver.html" class="m-doc">iDynTree::BerdySparseMAPSolver</a>
             </dt>
             <dd></dd>
-            <dt>
-              class <a href="classiDynTree_1_1InverseKinematics.html" class="m-doc">iDynTree::InverseKinematics</a>
-            </dt>
-            <dd>NLP-based Inverse kinematics.</dd>
             <dt>
               class <a href="classiDynTree_1_1optimalcontrol_1_1Constraint.html" class="m-doc">iDynTree::optimalcontrol::Constraint</a>
             </dt>
@@ -244,7 +244,8 @@
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">enum <a href="#ga62aff3167b9df327b4b1db6affadd21f" class="m-doc">BerdyVariants</a> { </span><span class="m-doc-wrap"><a href="#gga62aff3167b9df327b4b1db6affadd21faf59c4a22cd72d6e001dbba40910e9c32" class="m-doc">ORIGINAL_BERDY_FIXED_BASE</a> = 0,
-              <a href="#gga62aff3167b9df327b4b1db6affadd21fa1ca580068ec7f491800abeadf68185e5" class="m-doc">BERDY_FLOATING_BASE</a> = 1 }</span>
+              <a href="#gga62aff3167b9df327b4b1db6affadd21fa1ca580068ec7f491800abeadf68185e5" class="m-doc">BERDY_FLOATING_BASE</a> = 1,
+              <a href="#gga62aff3167b9df327b4b1db6affadd21fa02a303d789d6ebc0a5c3829cd72d4b4d" class="m-doc">BERDY_FLOATING_BASE_NON_COLLOCATED_EXT_WRENCHES</a> = 2 }</span>
             </dt>
             <dd>Enumeration of the Berdy variants implemented in this class.</dd>
             <dt>
@@ -266,7 +267,8 @@
               <a href="#ggab629c8d25391838124595ba8961654e4a3b05b1fa0daf40ead3bb45631fc1b425" class="m-doc">DOF_ACCELERATION_SENSOR</a> = 1000,
               <a href="#ggab629c8d25391838124595ba8961654e4afe52ea6ba4b27e76e1fd986700941151" class="m-doc">DOF_TORQUE_SENSOR</a> = 1001,
               <a href="#ggab629c8d25391838124595ba8961654e4aa295b9c16be05c81c215270381d2b648" class="m-doc">NET_EXT_WRENCH_SENSOR</a> = 1002,
-              <a href="#ggab629c8d25391838124595ba8961654e4a207d61f7e8d81f6729f6dd080ba8a06c" class="m-doc">JOINT_WRENCH_SENSOR</a> = 1003 }</span>
+              <a href="#ggab629c8d25391838124595ba8961654e4a207d61f7e8d81f6729f6dd080ba8a06c" class="m-doc">JOINT_WRENCH_SENSOR</a> = 1003,
+              <a href="#ggab629c8d25391838124595ba8961654e4a86f8f9556695317ef66bb0adef6cd978" class="m-doc">RCM_SENSOR</a> = 1004 }</span>
             </dt>
             <dd>Enumeration describing the possible sensor types implemented in Berdy.</dd>
           </dl>
@@ -276,7 +278,7 @@
           <section class="m-doc-details" id="ga62aff3167b9df327b4b1db6affadd21f"><div>
             <h3>
               enum <a href="#ga62aff3167b9df327b4b1db6affadd21f" class="m-doc-self">BerdyVariants</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/Estimation/BerdyHelper.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/BerdyHelper.h&gt;</a></div>
             </h3>
             <p>Enumeration of the Berdy variants implemented in this class.</p>
 <aside class="m-note m-danger"><h4>Warning</h4><p>This class is still in active development, and so API interface can change between iDynTree versions.</p></aside>
@@ -296,13 +298,19 @@
                   <p>Modified version of Berdy for accounting for free floating dynamics and removing the NET_INT_AND_EXT_WRENCHES_ON_LINK_WITHOUT_GRAV from the dynamic variables.</p>
                   </td>
                 </tr>
+                <tr>
+                  <td><a href="#gga62aff3167b9df327b4b1db6affadd21fa02a303d789d6ebc0a5c3829cd72d4b4d" class="m-doc-self" id="gga62aff3167b9df327b4b1db6affadd21fa02a303d789d6ebc0a5c3829cd72d4b4d">BERDY_FLOATING_BASE_NON_COLLOCATED_EXT_WRENCHES</a></td>
+                  <td>
+                  <p>Modified version of floating base Berdy for accounting centroidal dynamics constraints towards estimating the external link wrench independently of the internal joint torque estimates.</p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="ga83d8f828969dabc7dc82904d8de15312"><div>
             <h3>
               enum <a href="#ga83d8f828969dabc7dc82904d8de15312" class="m-doc-self">BerdyDynamicVariablesTypes</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/Estimation/BerdyHelper.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/BerdyHelper.h&gt;</a></div>
             </h3>
             <p>Enumeration describing the dynamic variables types (link acceleration, net wrenches, joint wrenches, joint torques, joint acceleration) used in Berdy.</p>
 <aside class="m-note m-danger"><h4>Warning</h4><p>This class is still in active development, and so API interface can change between iDynTree versions.</p></aside>
@@ -435,7 +443,7 @@ $ \ddot{q}_i $
           <section class="m-doc-details" id="gab629c8d25391838124595ba8961654e4"><div>
             <h3>
               enum <a href="#gab629c8d25391838124595ba8961654e4" class="m-doc-self">BerdySensorTypes</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/Estimation/BerdyHelper.h&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="BerdyHelper_8h.html">&lt;iDynTree/BerdyHelper.h&gt;</a></div>
             </h3>
             <p>Enumeration describing the possible sensor types implemented in Berdy.</p>
 <p>Note that the concept of &quot;sensor&quot; in Berdy estimation is more general that just a physical sensor mounted on the robot: for example it can include the information that a link is fixed to the ground (i.e. its angular velocity, angular and linear acceleration are zero) even if this information is not coming from an actual physical sensors. For this reason we do not use directly the iDynTree::SensorTypes enum, even if we reserve the first 1000 elements o of this enum to be compatibile with the iDynTree::SensorTypes enum. Enum values duplicates between BerdySensorTypes and SensorTypes are append a _SENSOR suffix to avoid problems when wrapping such enum wit SWIG.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This class is still in active development, and so API interface can change between iDynTree versions.</p></aside>
@@ -496,6 +504,12 @@ $ \ddot{q}_i $
                   <p>Non-physical sensor that measures the wrench trasmitted by a joint.</p>
                   </td>
                 </tr>
+                <tr>
+                  <td><a href="#ggab629c8d25391838124595ba8961654e4a86f8f9556695317ef66bb0adef6cd978" class="m-doc-self" id="ggab629c8d25391838124595ba8961654e4a86f8f9556695317ef66bb0adef6cd978">RCM_SENSOR</a></td>
+                  <td>
+                  <p>Non-physical sensor that holds the value of Rate of Change of Momentum (RCM) of the system for centroidal dynamics constraint.</p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div></section>
@@ -544,7 +558,7 @@ $ \ddot{q}_i $
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>iDynTree documentation. Licensed under the <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">GNU Lesser General Public License v3.0</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
+        <p>iDynTree documentation. Licensed under the <a href="https://spdx.org/licenses/BSD-3-Clause.html">BSD-3-Clause</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
       </div>
     </div>
   </div>

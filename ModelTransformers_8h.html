@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>iDynTree/Model/ModelTransformers.h file | iDynTree master</title>
+  <title>iDynTree/ModelTransformers.h file | iDynTree master</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -58,7 +58,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_6cbc0da72a45ae4a04ea9a67ef3f69a4.html">iDynTree</a>/</span><span class="m-breadcrumb"><a href="dir_77cdb3a72d5a00eea7dab51220307fb7.html">Model</a>/</span>ModelTransformers.h <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="dir_6cbc0da72a45ae4a04ea9a67ef3f69a4.html">iDynTree</a>/</span>ModelTransformers.h <span class="m-thin">file</span>
         </h1>
         <p>Collection of function to modify model in various ways.</p>
         <nav class="m-block m-default">
@@ -96,11 +96,34 @@
             </dt>
             <dd>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae25f91a29dc9b01ae310d5e1526fa273" class="m-doc">createReducedModel</a>(</span><span class="m-doc-wrap">const Model&amp; fullModel,
+              const std::vector&lt;std::string&gt;&amp; jointsInReducedModel,
+              Model&amp; reducedModel,
+              const std::unordered_map&lt;std::string, double&gt;&amp; removedJointPositions) -&gt; bool</span>
+            </dt>
+            <dd>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa6a9c44d5b80ede19b30f721f88d3679" class="m-doc">createModelWithNormalizedJointNumbering</a>(</span><span class="m-doc-wrap">const Model&amp; model,
               const std::string&amp; baseForNormalizedJointNumbering,
               Model&amp; reducedModel) -&gt; bool</span>
             </dt>
             <dd>Given a specified base, return a model with a &quot;normalized&quot; joint numbering for that base.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3800ea0a0da713ba27da022845601b2f" class="m-doc">extractSubModel</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; fullModel,
+              const <a href="classiDynTree_1_1Traversal.html" class="m-doc">iDynTree::<wbr />Traversal</a>&amp; subModelTraversal,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputSubModel) -&gt; bool</span>
+            </dt>
+            <dd>Extract sub model from sub model traversal.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a43a3d5de5f629b00c5c7a607278a4f20" class="m-doc">addValidNamesToAllSolidShapes</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel) -&gt; bool</span>
+            </dt>
+            <dd>Add automatically generated names to all visual and collision solid shapes of the model.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a133a097cc3ef37982c00cdd729829118" class="m-doc">moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel) -&gt; bool</span>
+            </dt>
+            <dd><a href="classiDynTree_1_1Transform.html" class="m-doc">Transform</a> the input model in model that can be exported as URDF with the given base link.</dd>
           </dl>
         </section>
         <section>
@@ -111,7 +134,7 @@
               Model&amp; modelWithoutFakeLinks)</span></span>
             </h3>
             <p>\function Remove all fake links in the model, transforming them in frames.</p>
-<p>Given a <a href="classiDynTree_1_1Model.html" class="m-doc">Model</a> in input, this function copies all its links and joints to the model in output, except for links that recognized as &quot;fake links&quot;.</p><p>The condition for a link to be classified as &quot;fake link&quot; are:</p><ul><li>The link has a zero mass.</li><li>The link is a leaf, i.e. it is connected to only one neighbor.</li><li>The link is connected to its only neighbor with a fixed joint.</li></ul><p>Once a &quot;fake link&quot; has been identified to respect this two conditions, it and the joint that it connects it to its only neighbor is not copied to the output model, but a frame with the same name of the &quot;fake link&quot; and with the same transform is added to the model.</p><aside class="m-note m-info"><h4>Note</h4><p>The definition of &quot;fake link&quot; used in this function excludes the case in which two fake links are attached to one another.</p></aside>
+<p>Given a <a href="classiDynTree_1_1Model.html" class="m-doc">Model</a> in input, this function copies all its links and joints to the model in output, except for links that recognized as &quot;fake links&quot;.</p><p>The condition for a link to be classified as &quot;fake link&quot; are:</p><ul><li>The link has a zero mass.</li><li>The link is a leaf, i.e. it is connected to only one neighbor.</li><li>The link is connected to its only neighbor with a fixed joint.</li></ul><p>Once a &quot;fake link&quot; has been identified to respect this two conditions, it and the joint that it connects it to its only neighbor is not copied to the output model, but a frame with the same name of the &quot;fake link&quot; and with the same transform is added to the model.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function does not handle <a href="classiDynTree_1_1SensorsList.html" class="m-doc">SensorsList</a> contained inside the input model.</p></aside><aside class="m-note m-info"><h4>Note</h4><p>The definition of &quot;fake link&quot; used in this function excludes the case in which two fake links are attached to one another.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a0dfcb86d2d13eb1969493ee84da2f5c0"><div>
             <h3>
@@ -121,6 +144,16 @@
             </h3>
             <p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</p>
 <p>All other joints are be removed by lumping (i.e. fusing together) the inertia of the links that are connected by that joint, assuming the joint to be in &quot;rest&quot; position (i.e. zero for revolute or prismatic joints). The links eliminated with this process are be added back to the reduced model as &quot;frames&quot;, and are copied in the same way all the additional frames of the lumped links.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae25f91a29dc9b01ae310d5e1526fa273"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae25f91a29dc9b01ae310d5e1526fa273" class="m-doc-self">createReducedModel</a>(</span><span class="m-doc-wrap">const Model&amp; fullModel,
+              const std::vector&lt;std::string&gt;&amp; jointsInReducedModel,
+              Model&amp; reducedModel,
+              const std::unordered_map&lt;std::string, double&gt;&amp; removedJointPositions)</span></span>
+            </h3>
+            <p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</p>
+<p>All other joints are be removed by lumping (i.e. fusing together) the inertia of the links that are connected by that joint, assuming the joint to be in &quot;rest&quot; position (i.e. zero for revolute or prismatic joints), or the position specified in the removedJointPositions if a given joint is specified in removedJointPositions</p>
           </div></section>
           <section class="m-doc-details" id="aa6a9c44d5b80ede19b30f721f88d3679"><div>
             <h3>
@@ -137,7 +170,56 @@
                 </tr>
               </tfoot>
             </table>
-<p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and a name of a link in that model. It returns a model identical to the one in input, but with the joint serialization of the non-fixed joint modified in such a way that a non-fixed joint has an index higher than all the non-fixed joints on the path between it and the base. After all the non-fixed joints, the fixed joints are also added with the same criteria, but applied to fixed joints.</p><aside class="m-note m-info"><h4>Note</h4><p>This method make sure that the non-fixed joint in the model have a &quot;regular numbering&quot; as described in Featherstone &quot;Rigid Body Dynamics Algorithm&quot;, section 4.1.2 . Note that this numbering is not required by any algorithm in iDynTree, but it may be useful for example to ensure that for a chain model the joint numbering is the one induced by the kinematic structure.</p></aside>
+<p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and a name of a link in that model. It returns a model identical to the one in input, but with the joint serialization of the non-fixed joint modified in such a way that a non-fixed joint has an index higher than all the non-fixed joints on the path between it and the base. After all the non-fixed joints, the fixed joints are also added with the same criteria, but applied to fixed joints.</p><aside class="m-note m-info"><h4>Note</h4><p>This method make sure that the non-fixed joint in the model have a &quot;regular numbering&quot; as described in Featherstone &quot;Rigid Body Dynamics Algorithm&quot;, section 4.1.2 . Note that this numbering is not required by any algorithm in iDynTree, but it may be useful for example to ensure that for a chain model the joint numbering is the one induced by the kinematic structure.</p></aside><aside class="m-note m-danger"><h4>Warning</h4><p>This function does not handle <a href="classiDynTree_1_1SensorsList.html" class="m-doc">SensorsList</a> contained inside the input model.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3800ea0a0da713ba27da022845601b2f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3800ea0a0da713ba27da022845601b2f" class="m-doc-self">extractSubModel</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; fullModel,
+              const <a href="classiDynTree_1_1Traversal.html" class="m-doc">iDynTree::<wbr />Traversal</a>&amp; subModelTraversal,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputSubModel)</span></span>
+            </h3>
+            <p>Extract sub model from sub model traversal.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error in creating the sub model.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function creates a new <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> containing links and joints composing the subModelTraversal. The function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and a <a href="classiDynTree_1_1Traversal.html" class="m-doc">iDynTree::<wbr />Traversal</a>. The new model will contain joints and links composing the subModelTraversal, with the same order. The FT sensor frames are added as additional frames.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function does not handle <a href="classiDynTree_1_1SensorsList.html" class="m-doc">SensorsList</a> contained inside the input model.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a43a3d5de5f629b00c5c7a607278a4f20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43a3d5de5f629b00c5c7a607278a4f20" class="m-doc-self">addValidNamesToAllSolidShapes</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel)</span></span>
+            </h3>
+            <p>Add automatically generated names to all visual and collision solid shapes of the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error in creating the sub model.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function creates a new <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> that is identical to the input one, but that sets a valid name for all the visual and collision solid shapes of the model.</p><p>For links that already have at least either collision or visual with valid name, <strong>all</strong> the corresponding shapes (collision or visual) will not be modified.</p><p>For links in which all shapes of a given type that do not have a valid name, a name will be generated as the following:</p><ul><li>If there is a single collision or visual element in the link, it will be named &lt;linkName&gt;_collision or &lt;linkName&gt;_visual</li><li>If there are multiple collision or visual elements in the link, the solid shapes will be &lt;linkName&gt;_collision_0, &lt;linkName&gt;_collision_1, ... &lt;linkName&gt;_collision_n or &lt;linkName&gt;_visual_0, &lt;linkName&gt;_visual_1, ... &lt;linkName&gt;_visual_n</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a133a097cc3ef37982c00cdd729829118"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a133a097cc3ef37982c00cdd729829118" class="m-doc-self">moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel)</span></span>
+            </h3>
+            <p><a href="classiDynTree_1_1Transform.html" class="m-doc">Transform</a> the input model in model that can be exported as URDF with the given base link.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error in creating the sub model.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>In iDynTree, the link frame can be placed without constraint w.r.t. to the joints to which the link is connected. On the other hand, in the URDF format, the origin of the frame of the child link connected to its parent with a non-fixed joint <strong>must</strong> lay on the axis of the joint.</p><p>That means that if you want to export a model with an arbitrary base link, some link frame will need to be moved to respect the constraint given by the URDF format. This function perform exactly this transformation, ensuring that inertia, visual and collision information is probably accounted for, and leaving the original link frames in the model as &quot;additional frames&quot; with the naming scheme &lt;linkName&gt;_original_frame .</p><p>Note that the operation done depends on the base link used, if you want to use a different base link, change the default base link of the model via inputModel.setDefaultBaseLink method.</p>
           </div></section>
         </section>
       </div>
@@ -184,7 +266,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>iDynTree documentation. Licensed under the <a href="https://www.gnu.org/licenses/lgpl-3.0.en.html">GNU Lesser General Public License v3.0</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
+        <p>iDynTree documentation. Licensed under the <a href="https://spdx.org/licenses/BSD-3-Clause.html">BSD-3-Clause</a>. Project maintained by the <a href="https://www.iit.it/web/ami/">Artificial and Mechanical Intelligence Lab</a>. Contact the team via <a href="https://github.com/robotology/idyntree/issues/new">GitHub</a>.<br />Generated by <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.
       </div>
     </div>
   </div>
